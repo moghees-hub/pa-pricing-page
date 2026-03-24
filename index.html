@@ -186,8 +186,17 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 /* RESPONSIVE */
 @media(max-width:768px){
   .hero{min-height:auto;padding:50px 0 48px}
+  .hero h1 span, .hero h1 em{white-space:normal}
+  .hero h1{font-size:clamp(24px,6.5vw,36px)}
+  .hero__sub{font-size:14px}
+  .hero__cta{font-size:12px;padding:14px 28px}
   .proof-bar__inner{grid-template-columns:repeat(3,1fr);gap:12px}
   .proof-stat__num{font-size:24px}
+  .problem h2{font-size:clamp(22px,5vw,32px)}
+  .excuses h2{font-size:clamp(22px,5vw,32px)}
+  .program h2{font-size:clamp(22px,5vw,32px)}
+  .guarantee h2{font-size:clamp(22px,5vw,32px)}
+  .pricing h2{font-size:clamp(22px,5vw,32px)}
   .program__phases{grid-template-columns:1fr}
   .pricing__grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}
   .pricing__card--featured{transform:none}
@@ -200,7 +209,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
   .top-bar__text{font-size:11px}
 }
 @media(max-width:480px){
-  .hero h1{font-size:clamp(26px,8vw,40px)}
+  .hero h1{font-size:clamp(22px,7vw,30px)}
   .hero{padding:72px 0 40px}
   .proof-bar__inner{gap:8px}
   .proof-stat__num{font-size:22px}
@@ -210,6 +219,8 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
   .float-wa{width:52px;height:52px;bottom:20px;right:20px}
   .float-wa svg{width:26px;height:26px}
   .top-bar__btn{display:none}
+  .testi-scroll{grid-template-columns:1fr}
+  .pricing__toggle-btn{padding:8px 16px;font-size:12px}
 }
 </style>
 </head>
