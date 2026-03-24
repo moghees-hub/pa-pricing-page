@@ -186,30 +186,34 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 /* RESPONSIVE */
 @media(max-width:768px){
   .hero{min-height:auto;padding:50px 0 48px}
-  .hero h1 span, .hero h1 em{white-space:normal}
-  .hero h1{font-size:clamp(24px,6.5vw,36px)}
+  .hero h1 span, .hero h1 em{white-space:normal!important}
+  .hero h1{font-size:clamp(24px,6.5vw,36px);padding:0 10px}
   .hero__sub{font-size:14px}
   .hero__cta{font-size:12px;padding:14px 28px}
   .proof-bar__inner{grid-template-columns:repeat(3,1fr);gap:12px}
   .proof-stat__num{font-size:24px}
-  .problem h2{font-size:clamp(22px,5vw,32px)}
-  .excuses h2{font-size:clamp(22px,5vw,32px)}
-  .program h2{font-size:clamp(22px,5vw,32px)}
-  .guarantee h2{font-size:clamp(22px,5vw,32px)}
-  .pricing h2{font-size:clamp(22px,5vw,32px)}
+  h2{word-break:break-word}
+  .problem h2{font-size:clamp(20px,5vw,30px);padding:0 10px}
+  .excuses h2{font-size:clamp(20px,5vw,30px);padding:0 10px}
+  .program h2{font-size:clamp(20px,5vw,30px);padding:0 10px}
+  .guarantee h2{font-size:clamp(20px,5vw,30px);padding:0 10px;white-space:normal!important}
+  .pricing h2{font-size:clamp(20px,5vw,30px);padding:0 10px}
   .program__phases{grid-template-columns:1fr}
-  .pricing__grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}
-  .pricing__card--featured{transform:none}
+  .pricing__grid{grid-template-columns:1fr;max-width:340px;margin-left:auto;margin-right:auto}
+  .pricing__card{padding:28px 20px}
+  .pricing__card--featured{transform:none;padding:28px 20px}
   .pricing__card--featured:hover{transform:translateY(-6px)}
+  .pricing__price{font-size:clamp(32px,8vw,42px)}
   .excuse-grid{grid-template-columns:1fr}
-  .testi-scroll{grid-template-columns:repeat(2,1fr);overflow-x:auto}
+  .testi-scroll{grid-template-columns:repeat(2,1fr);gap:12px;padding:32px 15px 15px}
   .testi-card{min-width:0}
   .transform-grid{grid-template-columns:repeat(2,1fr)}
   .top-bar{gap:10px}
   .top-bar__text{font-size:11px}
+  .pricing__toggle-btn{padding:8px 18px;font-size:12px}
 }
 @media(max-width:480px){
-  .hero h1{font-size:clamp(22px,7vw,30px)}
+  .hero h1{font-size:clamp(20px,6.5vw,28px)}
   .hero{padding:72px 0 40px}
   .proof-bar__inner{gap:8px}
   .proof-stat__num{font-size:22px}
@@ -219,8 +223,9 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
   .float-wa{width:52px;height:52px;bottom:20px;right:20px}
   .float-wa svg{width:26px;height:26px}
   .top-bar__btn{display:none}
-  .testi-scroll{grid-template-columns:1fr}
-  .pricing__toggle-btn{padding:8px 16px;font-size:12px}
+  .pricing__grid{max-width:300px}
+  .pricing__card{padding:24px 16px}
+  .pricing__card--featured{padding:24px 16px}
 }
 </style>
 </head>
