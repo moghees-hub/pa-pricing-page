@@ -9,7 +9,7 @@
 <script src="https://fast.wistia.com/player.js" async></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--green:#7FC838;--green-dark:#5a9a20;--black:#0a0a0a;--white:#fff;--gray:#666;--gray-light:#999;--light:#f7f8fa;--lighter:#fafbfc;--border:#e5e7eb;--text:#1a1a1a;--text-secondary:#555}
+:root{--green:#7FC838;--green-dark:#7FC838;--black:#0a0a0a;--white:#fff;--gray:#666;--gray-light:#999;--light:#f7f8fa;--lighter:#fafbfc;--border:#e5e7eb;--text:#1a1a1a;--text-secondary:#555}
 html{scroll-behavior:smooth}
 body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
 
@@ -38,10 +38,12 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .hero .container{position:relative;z-index:1;width:100%;max-width:860px;margin:0 auto;padding:0 20px}
 .hero__badge{display:inline-flex;align-items:center;gap:10px;background:rgba(127,200,56,0.1);border:1px solid rgba(127,200,56,0.25);color:var(--green);font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;padding:10px 24px;border-radius:30px;margin-bottom:36px}
 .hero__badge svg{width:18px;height:18px;fill:var(--green)}
-.hero h1{font-size:clamp(32px,5.5vw,64px);font-weight:900;line-height:1.04;letter-spacing:-.035em;color:var(--white);margin-bottom:20px}
+.hero h1{font-size:clamp(28px,4.2vw,48px);font-weight:900;line-height:1.1;letter-spacing:-.035em;color:var(--white);margin-bottom:20px;text-align:center}
 .hero h1 em{font-style:normal;color:var(--green)}
-.hero__sub{font-size:16px;color:#999;font-weight:500;margin-bottom:44px;max-width:600px;margin-left:auto;margin-right:auto}
+.hero__sub{font-size:16px;color:#999;font-weight:500;margin-bottom:0;max-width:600px;margin-left:auto;margin-right:auto}
 .hero__sub strong{color:var(--white);font-weight:700}
+.hero__cta{display:inline-block;background:var(--green);color:#000;font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:16px 36px;border-radius:8px;text-decoration:none;transition:transform .2s,background .2s;margin-top:28px;margin-bottom:32px}
+.hero__cta:hover{transform:scale(1.05);background:#8fd44a}
 .video-wrap{max-width:760px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 0 80px rgba(127,200,56,0.08),0 20px 60px rgba(0,0,0,0.5);border:1px solid rgba(127,200,56,0.1)}
 
 /* SOCIAL PROOF BAR */
@@ -51,24 +53,31 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .proof-stat__label{font-size:12px;color:var(--gray);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
 
 /* PROBLEM SECTION */
-.problem{background:var(--white);padding:80px 0;text-align:center}
+.problem{background:var(--white);padding:50px 0;text-align:center}
 .problem .container{max-width:800px;margin:0 auto;padding:0 20px}
-.problem h2{font-size:clamp(26px,4.5vw,48px);font-weight:900;letter-spacing:-.025em;color:var(--text);line-height:1.1}
+.problem h2{font-size:clamp(24px,3.5vw,38px);font-weight:900;letter-spacing:-.025em;color:var(--text);line-height:1.1}
 .problem h2 em{font-style:normal;color:var(--green-dark)}
 .problem p{font-size:17px;color:var(--text-secondary);margin-top:20px;line-height:1.8;max-width:650px;margin-left:auto;margin-right:auto}
 
 /* EXCUSES SECTION */
-.excuses{background:var(--light);padding:80px 0;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.excuses .container{max-width:800px;margin:0 auto;padding:0 20px}
-.excuses h2{font-size:clamp(26px,4.5vw,48px);font-weight:900;letter-spacing:-.025em;color:var(--text);line-height:1.1}
-.excuses h2 em{font-style:normal;color:var(--green-dark)}
-.excuses p{font-size:17px;color:var(--text-secondary);margin-top:20px;line-height:1.8;max-width:650px;margin-left:auto;margin-right:auto}
-.excuses__list{list-style:none;max-width:600px;margin:36px auto 0;text-align:left}
-.excuses__list li{color:var(--text-secondary);font-size:15px;padding:12px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:12px;line-height:1.6}
-.excuses__list li::before{content:'\2717';color:#e74c3c;font-weight:800;font-size:14px;flex-shrink:0;margin-top:2px}
+.excuses{background:var(--black);padding:50px 0;text-align:center}
+.excuses .container{max-width:1000px;margin:0 auto;padding:0 20px}
+.excuses__badge{display:inline-flex;align-items:center;gap:8px;background:rgba(127,200,56,0.1);border:1px solid rgba(127,200,56,0.2);color:var(--green);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:8px 20px;border-radius:20px;margin-bottom:28px}
+.excuses h2{font-size:clamp(26px,4.5vw,44px);font-weight:900;letter-spacing:-.025em;color:var(--white);line-height:1.1}
+.excuses h2 em{font-style:normal;color:var(--green)}
+.excuse-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px}
+.excuse-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;text-align:left;transition:transform .3s}
+.excuse-card:hover{transform:translateY(-4px)}
+.excuse-card__img{width:100%;height:350px;overflow:hidden;cursor:pointer}
+.excuse-card__img img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.excuse-card__text{padding:24px 28px}
+.excuse-card__text p{font-size:14px;color:#bbb;line-height:1.7;margin-top:10px}
+.excuse-card__text p:first-child{margin-top:0}
+.excuse-card__text strong{color:var(--white);font-size:16px}
+.excuse-card__text em{color:var(--green);font-style:normal;font-weight:600}
 
 /* TRANSFORMATIONS */
-.transform-section{background:var(--white);padding:80px 0}
+.transform-section{background:var(--white);padding:50px 0}
 .transform-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px;max-width:1100px;margin-left:auto;margin-right:auto;padding:0 20px}
 .transform-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s}
 .transform-card:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(0,0,0,0.1)}
@@ -78,7 +87,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .transform-card__name{padding:10px 14px;font-size:12px;font-weight:700;text-align:center;border-top:1px solid var(--border)}
 
 /* GUARANTEE */
-.guarantee{background:var(--light);padding:80px 0;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.guarantee{background:var(--light);padding:50px 0;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .guarantee .container{max-width:700px;margin:0 auto;padding:0 20px}
 .guarantee__shield{width:80px;height:80px;background:rgba(127,200,56,0.1);border:2px solid rgba(127,200,56,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px}
 .guarantee__shield svg{width:38px;fill:var(--green-dark)}
@@ -87,78 +96,78 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .guarantee p{font-size:15px;color:var(--text-secondary);margin-top:16px;line-height:1.7}
 
 /* PROGRAM SECTION */
-.program{background:var(--white);padding:80px 0}
+.program{background:var(--white);padding:50px 0}
 .program .container{max-width:1000px;margin:0 auto;padding:0 20px}
-.program h2{font-size:clamp(26px,4.5vw,48px);font-weight:900;letter-spacing:-.025em;text-align:center;line-height:1.1;color:var(--text)}
-.program h2 em{font-style:normal;color:var(--green-dark)}
-.program__subtitle{text-align:center;font-size:15px;color:var(--gray);margin-top:10px;font-style:italic;font-weight:600}
-.program__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.program__card{background:var(--light);border:1px solid var(--border);border-radius:16px;padding:32px 24px;text-align:center;transition:transform .3s,box-shadow .3s}
-.program__card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.06)}
-.program__card-icon{width:56px;height:56px;background:rgba(127,200,56,0.1);border:2px solid rgba(127,200,56,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:24px}
-.program__card h3{font-size:16px;font-weight:800;color:var(--text);margin-bottom:8px}
-.program__card p{font-size:13px;color:var(--gray);line-height:1.6}
+.program h2{font-size:clamp(24px,4vw,40px);font-weight:900;letter-spacing:-.025em;text-align:center;line-height:1.15;color:var(--text)}
+.program h2 em{font-style:normal;color:var(--green)}
+.program__subtitle{text-align:center;font-size:15px;color:var(--text-secondary);margin-top:14px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.7}
+.program__phases{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.phase-card{background:var(--light);border:1px solid var(--border);border-radius:16px;padding:32px 28px;text-align:left;transition:transform .3s,box-shadow .3s}
+.phase-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.06)}
+.phase-card__header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.phase-card__num{font-size:32px;font-weight:900;color:var(--green);letter-spacing:-.02em}
+.phase-card__tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);background:var(--white);border:1px solid var(--border);padding:4px 12px;border-radius:20px}
+.phase-card h3{font-size:20px;font-weight:900;color:var(--text);margin-bottom:14px;line-height:1.2}
+.phase-card h3 em{font-style:normal;color:var(--green)}
+.phase-card p{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:12px}
+.phase-card__stats{display:flex;flex-direction:column;gap:8px;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
+.phase-card__stats div{font-size:13px;color:var(--text-secondary)}
+.phase-card__stats strong{color:var(--green);font-weight:800;margin-right:6px}
+.program__endnote{text-align:center;font-size:18px;font-weight:700;color:var(--text);margin-top:40px}
+.program__endnote em{font-style:normal;color:var(--green)}
 
-/* SUPPORT SECTION */
-.support{background:var(--light);padding:80px 0;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.support .container{max-width:900px;margin:0 auto;padding:0 20px}
-.support h2{font-size:clamp(26px,4.5vw,48px);font-weight:900;letter-spacing:-.025em;color:var(--text);line-height:1.1}
-.support h2 em{font-style:normal;color:var(--green-dark)}
-.support__subtitle{font-size:15px;color:var(--gray);margin-top:10px;font-style:italic;font-weight:600}
-.support__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px;text-align:left}
-.support__item{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px 24px;display:flex;align-items:flex-start;gap:16px;transition:transform .3s,box-shadow .3s}
-.support__item:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,0.06)}
-.support__item-icon{width:44px;height:44px;background:rgba(127,200,56,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px}
-.support__item h3{font-size:15px;font-weight:800;color:var(--text);margin-bottom:6px}
-.support__item p{font-size:13px;color:var(--gray);line-height:1.6}
 
 /* RESULTS SECTION */
-.results{background:var(--white);padding:80px 0;text-align:center}
+.results{background:var(--white);padding:50px 0;text-align:center}
 .results .container{max-width:900px;margin:0 auto;padding:0 20px}
 .results h2{font-size:clamp(26px,4.5vw,48px);font-weight:900;letter-spacing:-.025em;line-height:1.1;color:var(--text)}
 .results h2 em{font-style:normal;color:var(--green-dark)}
 .results__subtitle{font-size:15px;color:var(--gray);margin-top:10px;font-style:italic;font-weight:600}
 
 /* TESTIMONIALS CAROUSEL */
-.testi-scroll{display:flex;gap:18px;overflow-x:auto;padding:48px 20px 20px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;max-width:1200px;margin:0 auto}
-.testi-scroll::-webkit-scrollbar{display:none}
-.testi-card{min-width:260px;max-width:260px;scroll-snap-align:start;background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;flex-shrink:0;transition:transform .3s,box-shadow .3s}
+.testi-scroll{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:48px 20px 20px;max-width:1200px;margin:0 auto}
+.testi-card{background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .3s,box-shadow .3s}
 .testi-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.08)}
 .testi-card__thumb{background:#000;overflow:hidden}
 .testi-card__body{padding:14px 16px;border-top:1px solid var(--border)}
 .testi-card__name{font-size:14px;font-weight:700;color:var(--text)}
 .testi-card__result{font-size:12px;color:var(--green-dark);font-weight:600;margin-top:3px;display:flex;align-items:center;gap:5px}
 .testi-card__result::before{content:'\2713';font-size:11px}
-.scroll-hint{text-align:center;margin-top:16px;font-size:12px;color:var(--gray);font-weight:600}
+.scroll-hint{text-align:center;margin-top:16px;font-size:12px;color:var(--gray);font-weight:600;display:none}
 
 /* PRICING SECTION */
-.pricing{background:var(--light);padding:80px 0;text-align:center;border-top:1px solid var(--border)}
+.pricing{background:var(--light);padding:50px 0;text-align:center;border-top:1px solid var(--border)}
 .pricing .container{max-width:1100px;margin:0 auto;padding:0 20px}
-.pricing h2{font-size:clamp(26px,4.5vw,48px);font-weight:900;letter-spacing:-.025em;color:var(--text);line-height:1.1}
-.pricing h2 em{font-style:normal;color:var(--green-dark)}
-.pricing__subtitle{font-size:15px;color:var(--gray);margin-top:10px;font-style:italic;font-weight:600}
-.pricing__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px;align-items:start}
-.pricing__card{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:40px 28px;position:relative;transition:transform .3s,box-shadow .3s;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
-.pricing__card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.1)}
-.pricing__card--featured{border-color:var(--green);box-shadow:0 4px 24px rgba(127,200,56,0.15);transform:scale(1.04)}
-.pricing__card--featured:hover{transform:scale(1.04) translateY(-6px);box-shadow:0 20px 60px rgba(127,200,56,0.2)}
+.pricing h2{font-size:clamp(26px,4.5vw,44px);font-weight:900;letter-spacing:-.025em;color:var(--text);line-height:1.1}
+.pricing h2 em{font-style:normal;color:var(--green)}
+.pricing__subtitle{font-size:14px;color:var(--gray);margin-top:10px;font-weight:600}
+.pricing__toggle{display:inline-flex;background:var(--white);border:2px solid var(--border);border-radius:50px;padding:4px;margin-top:28px;position:relative}
+.pricing__toggle-btn{padding:10px 28px;border-radius:50px;border:none;background:transparent;font-size:14px;font-weight:700;font-family:'Inter',sans-serif;color:var(--gray);cursor:pointer;transition:all .3s;position:relative;z-index:1}
+.pricing__toggle-btn.active{background:var(--green);color:#000}
+.pricing__toggle-save{font-size:10px;font-weight:800;color:var(--green);background:rgba(127,200,56,0.1);padding:2px 8px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.pricing__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px;align-items:start}
+.pricing__card{background:var(--white);border:2px solid var(--border);border-radius:20px;padding:36px 28px;position:relative;transition:transform .3s,box-shadow .3s}
+.pricing__card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.08)}
+.pricing__card--featured{border-color:var(--green);box-shadow:0 4px 24px rgba(127,200,56,0.12);transform:scale(1.05)}
+.pricing__card--featured:hover{transform:scale(1.05) translateY(-4px);box-shadow:0 20px 60px rgba(127,200,56,0.2)}
 .pricing__popular{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--green);color:#000;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 20px;border-radius:20px;white-space:nowrap}
-.pricing__plan{font-size:14px;font-weight:800;color:var(--green-dark);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
-.pricing__duration{font-size:13px;color:var(--gray);font-weight:600;margin-bottom:16px}
-.pricing__price{font-size:clamp(36px,5vw,52px);font-weight:900;color:var(--text);letter-spacing:-.03em}
-.pricing__price span{font-size:16px;font-weight:600;color:var(--gray)}
-.pricing__period{font-size:13px;color:var(--gray);font-weight:500;margin-top:4px}
-.pricing__divider{width:100%;height:1px;background:var(--border);margin:24px 0}
-.pricing__features{list-style:none;text-align:left;margin-bottom:28px}
-.pricing__features li{font-size:13px;color:var(--text-secondary);padding:8px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.5}
-.pricing__features li::before{content:'\2713';color:var(--green-dark);font-weight:800;font-size:13px;flex-shrink:0;margin-top:1px}
-.pricing__btn{display:inline-block;width:100%;background:var(--green);color:#000;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:16px 24px;border-radius:50px;text-decoration:none;border:none;cursor:pointer;transition:transform .25s,box-shadow .25s;box-shadow:0 4px 20px rgba(127,200,56,0.25)}
+.pricing__plan{font-size:13px;font-weight:800;color:var(--green);text-transform:uppercase;letter-spacing:.12em;margin-bottom:4px}
+.pricing__tier{font-size:11px;color:var(--gray);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+.pricing__price{font-size:clamp(36px,5vw,48px);font-weight:900;color:var(--text);letter-spacing:-.03em}
+.pricing__price span{font-size:15px;font-weight:600;color:var(--gray)}
+.pricing__price-sub{font-size:12px;color:var(--gray);font-weight:500;margin-top:4px;min-height:18px}
+.pricing__price-save{font-size:12px;color:var(--green);font-weight:700;margin-top:4px;min-height:18px}
+.pricing__divider{width:100%;height:1px;background:var(--border);margin:20px 0}
+.pricing__features{list-style:none;text-align:left;margin-bottom:24px}
+.pricing__features li{font-size:13px;color:var(--text-secondary);padding:7px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.pricing__features li::before{content:'\2713';color:var(--green);font-weight:800;font-size:13px;flex-shrink:0;margin-top:1px}
+.pricing__btn{display:inline-block;width:100%;background:var(--green);color:#000;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:14px 24px;border-radius:50px;text-decoration:none;border:none;cursor:pointer;transition:transform .25s,box-shadow .25s;box-shadow:0 4px 20px rgba(127,200,56,0.25)}
 .pricing__btn:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(127,200,56,0.4)}
 .pricing__btn--outline{background:var(--white);border:2px solid var(--border);color:var(--text);box-shadow:none}
-.pricing__btn--outline:hover{border-color:var(--green);color:var(--green-dark);box-shadow:0 4px 20px rgba(127,200,56,0.15)}
+.pricing__btn--outline:hover{border-color:var(--green);color:var(--green);box-shadow:0 4px 20px rgba(127,200,56,0.15)}
 
 /* BOTTOM CTA */
-.bottom-cta{background:var(--white);padding:64px 0;text-align:center;border-top:1px solid var(--border)}
+.bottom-cta{background:var(--white);padding:50px 0;text-align:center;border-top:1px solid var(--border)}
 
 /* WA BUTTON */
 .btn-wa{display:inline-flex;align-items:center;gap:12px;background:#25D366;color:#fff;font-size:15px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:18px 48px;border-radius:50px;text-decoration:none;border:none;cursor:pointer;margin-top:28px;transition:transform .25s,box-shadow .25s;box-shadow:0 4px 28px rgba(37,211,102,0.35)}
@@ -176,15 +185,16 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  .hero{min-height:auto;padding:80px 0 48px}
+  .hero{min-height:auto;padding:50px 0 48px}
   .proof-bar__inner{grid-template-columns:repeat(3,1fr);gap:12px}
   .proof-stat__num{font-size:24px}
-  .program__grid{grid-template-columns:1fr}
-  .support__grid{grid-template-columns:1fr}
+  .program__phases{grid-template-columns:1fr}
   .pricing__grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}
   .pricing__card--featured{transform:none}
   .pricing__card--featured:hover{transform:translateY(-6px)}
-  .testi-card{min-width:240px;max-width:240px}
+  .excuse-grid{grid-template-columns:1fr}
+  .testi-scroll{grid-template-columns:repeat(2,1fr);overflow-x:auto}
+  .testi-card{min-width:0}
   .transform-grid{grid-template-columns:repeat(2,1fr)}
   .top-bar{gap:10px}
   .top-bar__text{font-size:11px}
@@ -225,8 +235,9 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
         Physique Academy
       </div>
     </div>
-    <h1 data-reveal>Your Body <em>Deserves To Give</em><br>You The Control, Not Take It Away</h1>
-    <p class="hero__sub" data-reveal><strong>Watch the video below</strong> to see how busy men are finally building the physique they've been chasing — without giving up their life.</p>
+    <h1 data-reveal><span style="white-space:nowrap">The Man You Are On The Inside</span><br><em style="white-space:nowrap">Deserves To Show On The Outside.</em></h1>
+    <p class="hero__sub" data-reveal>Getting in great shape doesn't have to be a full time job. The men's lives we have transformed weren't all gym buffs. Building an incredible physique just takes <strong>the right system.</strong></p>
+    <a href="#pricing" class="hero__cta" data-reveal>START YOUR TRANSFORMATION FROM $247/PM</a>
     <div class="video-wrap" data-reveal>
       <script src="https://fast.wistia.com/embed/bec8eb6kex.js" async type="module"></script>
       <style>wistia-player[media-id='bec8eb6kex']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/bec8eb6kex/swatch');display:block;filter:blur(5px);padding-top:56.25%}</style>
@@ -240,39 +251,294 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
   <div class="proof-bar__inner">
     <div class="proof-stat"><div class="proof-stat__num">500+</div><div class="proof-stat__label">Men Transformed</div></div>
     <div class="proof-stat"><div class="proof-stat__num">4.9&#9733;</div><div class="proof-stat__label">Google Rating</div></div>
-    <div class="proof-stat"><div class="proof-stat__num">12+</div><div class="proof-stat__label">Expert Coaches</div></div>
+    <div class="proof-stat"><div class="proof-stat__num">20+</div><div class="proof-stat__label">Expert Coaches</div></div>
   </div>
 </div>
 
 <!-- PROBLEM -->
 <section class="problem">
   <div class="container" data-reveal>
-    <h2>Who Are Tired Of <em>Wishing</em><br>And Not Doing Something About It</h2>
-    <p>You've tried the diets. You've downloaded the apps. You've told yourself "Monday" more times than you can count. But deep down you already know — what you've been doing isn't working, and it never will. The men who get results aren't smarter or more motivated. They just stopped trying to figure it out alone.</p>
+    <h2>Hear It Directly From Men <em>Who Got Tired</em><br><em>Of Waiting And Did Something About It</em></h2>
+    <p>Busy schedules. Demanding jobs. Young kids. Every reason not to start. They did it anyway.</p>
+  </div>
+  <div class="testi-scroll" data-reveal>
+    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/v6wrydquwp.js" async type="module"></script><style>wistia-player[media-id='v6wrydquwp']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/v6wrydquwp/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="v6wrydquwp" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Ross G</div><div class="testi-card__result">Coach Dylan</div></div></div>
+    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/ov6y7cwejr.js" async type="module"></script><style>wistia-player[media-id='ov6y7cwejr']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/ov6y7cwejr/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="ov6y7cwejr" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Nate M</div><div class="testi-card__result">Coach Adam</div></div></div>
+    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/hjwdqzarde.js" async type="module"></script><style>wistia-player[media-id='hjwdqzarde']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/hjwdqzarde/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="hjwdqzarde" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Matt B</div><div class="testi-card__result">Coach Zayne</div></div></div>
+    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/mr9467u1c2.js" async type="module"></script><style>wistia-player[media-id='mr9467u1c2']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/mr9467u1c2/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="mr9467u1c2" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Hans R</div><div class="testi-card__result">Coach Kris</div></div></div>
+    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/tnsmwnukaj.js" async type="module"></script><style>wistia-player[media-id='tnsmwnukaj']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/tnsmwnukaj/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="tnsmwnukaj" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">David M</div><div class="testi-card__result">Coach Danny</div></div></div>
+    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/kc82ibgltk.js" async type="module"></script><style>wistia-player[media-id='kc82ibgltk']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/kc82ibgltk/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="kc82ibgltk" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Jamie D</div><div class="testi-card__result">Coach Adam</div></div></div>
+    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/bqfnlg1d6w.js" async type="module"></script><style>wistia-player[media-id='bqfnlg1d6w']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/bqfnlg1d6w/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="bqfnlg1d6w" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Marc K</div><div class="testi-card__result">Coach Ash</div></div></div>
+    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/j7ot6eeo0c.js" async type="module"></script><style>wistia-player[media-id='j7ot6eeo0c']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/j7ot6eeo0c/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="j7ot6eeo0c" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Joe S</div><div class="testi-card__result">Coach Kris</div></div></div>
+    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/hbpw88758w.js" async type="module"></script><style>wistia-player[media-id='hbpw88758w']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/hbpw88758w/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="hbpw88758w" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Rob J</div><div class="testi-card__result">Coach Connor</div></div></div>
+    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/pjlzx8jn96.js" async type="module"></script><style>wistia-player[media-id='pjlzx8jn96']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/pjlzx8jn96/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="pjlzx8jn96" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Damien M</div><div class="testi-card__result">Coach Ash</div></div></div>
+    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/cgg7c79ggc.js" async type="module"></script><style>wistia-player[media-id='cgg7c79ggc']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/cgg7c79ggc/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="cgg7c79ggc" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Craig D</div><div class="testi-card__result">Coach Sam</div></div></div>
+    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/x31cxixvo2.js" async type="module"></script><style>wistia-player[media-id='x31cxixvo2']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/x31cxixvo2/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="x31cxixvo2" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Chris M</div><div class="testi-card__result">Coach Kris</div></div></div>
   </div>
 </section>
+
 
 <!-- EXCUSES -->
 <section class="excuses">
   <div class="container" data-reveal>
+    <div class="excuses__badge">Sound Familiar?</div>
     <h2>Your Excuses Are Valid.<br><em>They Just Aren't Good Enough</em></h2>
-    <p>We've heard every reason not to start. And honestly? Most of them make sense. But here's the thing — the men who transformed had the exact same excuses.</p>
-    <ul class="excuses__list">
-      <li>"I don't have time — I work 60+ hours a week"</li>
-      <li>"I've tried everything before and nothing sticks"</li>
-      <li>"I'm too far gone to get back in shape"</li>
-      <li>"I can't afford a coaching programme right now"</li>
-      <li>"I'll start when things calm down at work"</li>
-      <li>"I don't know enough about nutrition or training"</li>
-    </ul>
+    <div class="excuse-grid">
+      <div class="excuse-card">
+        <div class="excuse-card__img" onclick="openExcuseImg(this)"><img src="https://physique-academy.s3.amazonaws.com/landing-pages/ross.webp" alt="Ross transformation" loading="lazy"></div>
+        <div class="excuse-card__text">
+          <p><strong>Ross 43,</strong> was <em>raising two kids alone</em> and running up his Italian dynasty little empire for years.</p>
+          <p>Most men would have come up with plenty of excuses in this situation. These used it as a reason. <em>He got it all back.</em></p>
+        </div>
+      </div>
+      <div class="excuse-card">
+        <div class="excuse-card__img" onclick="openExcuseImg(this)"><img src="https://physique-academy.s3.amazonaws.com/landing-pages/johnathan.webp" alt="Johnathan transformation" loading="lazy"></div>
+        <div class="excuse-card__text">
+          <p><strong>Jonathan</strong> hadn't looked at <em>himself in the mirror</em> for the best part of nearly 8 years. It was costing him his confidence, his ambition, and parts of his life he'd quietly stopped pursuing.</p>
+          <p>In <em>four weeks.</em> He got it all back.</p>
+        </div>
+      </div>
+      <div class="excuse-card">
+        <div class="excuse-card__img" onclick="openExcuseImg(this)"><img src="https://physique-academy.s3.amazonaws.com/landing-pages/sean.webp" alt="Sean transformation" loading="lazy"></div>
+        <div class="excuse-card__text">
+          <p><strong>Sean,</strong> had been <em>consistently training for 10 years</em> and had nothing to show for it.</p>
+          <p>Despite being a father of 2 kids and working long hours in his business. <em>He got it back.</em></p>
+        </div>
+      </div>
+      <div class="excuse-card">
+        <div class="excuse-card__img" onclick="openExcuseImg(this)"><img src="https://physique-academy.s3.amazonaws.com/landing-pages/marc.webp" alt="Marc transformation" loading="lazy"></div>
+        <div class="excuse-card__text">
+          <p><strong>Marc 54,</strong> dropped it over his age and hadn't done anything with his life. Six months later and he placed 3rd in his age group at a 5K and also completed a half marathon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="pricing" id="pricing">
+  <div class="container" data-reveal>
+    <h2>Experience <em>World-Class Coaching</em></h2>
+    <div class="pricing__toggle">
+      <button class="pricing__toggle-btn active" onclick="togglePricing('monthly', this)">Monthly</button>
+      <button class="pricing__toggle-btn" onclick="togglePricing('6month', this)">6 Months<span class="pricing__toggle-save">Save</span></button>
+    </div>
+    <div class="pricing__grid">
+
+      <div class="pricing__card">
+        <div class="pricing__plan">Lite</div>
+        <div class="pricing__tier">Armstrong Program</div>
+        <div class="pricing__price price-monthly">$<span></span>247 <span>/mo</span></div>
+        <div class="pricing__price price-6month" style="display:none">$<span></span>1,482 <span>/6mo</span></div>
+        <div class="pricing__price-sub price-monthly">Billed monthly</div>
+        <div class="pricing__price-save price-6month" style="display:none">Pay upfront for 6 months</div>
+        <div class="pricing__divider"></div>
+        <ul class="pricing__features">
+          <li>Customised nutrition program, training program, step targets, cardio routines</li>
+          <li>Bi-weekly video check-ins with feedback and explanation of adjustments</li>
+          <li>Supplement recommendations</li>
+          <li>1-1 Coach WhatsApp support - Monday, Wednesday, Saturday</li>
+          <li>Private Community group access</li>
+        </ul>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-lite-us-247-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-lite-us-247-6-months-full" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-6month" style="display:none">Get Started</a>
+      </div>
+
+      <div class="pricing__card pricing__card--featured">
+        <div class="pricing__popular">Most Popular</div>
+        <div class="pricing__plan">Premium</div>
+        <div class="pricing__tier">Armstrong Program</div>
+        <div class="pricing__price price-monthly">$<span></span>449 <span>/mo</span></div>
+        <div class="pricing__price price-6month" style="display:none">$<span></span>2,309 <span>/6mo</span></div>
+        <div class="pricing__price-sub price-monthly">Billed monthly</div>
+        <div class="pricing__price-save price-6month" style="display:none">Save $385 vs monthly</div>
+        <div class="pricing__divider"></div>
+        <ul class="pricing__features">
+          <li>Premium customised nutrition program, training program, step targets, cardio routines</li>
+          <li>Weekly video check-ins with feedback and explanation of adjustments</li>
+          <li>Supplement recommendations</li>
+          <li>1-1 Coach WhatsApp support Monday-Saturday afternoon</li>
+          <li>Zoom calls every 6 weeks</li>
+          <li>Form video analysis feedback</li>
+          <li>Private Community group access</li>
+          <li>Mental health support (therapist)</li>
+        </ul>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-premium-us-449-6-months" target="_blank" rel="noopener" class="pricing__btn btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-premium-us-449-6-months-full" target="_blank" rel="noopener" class="pricing__btn btn-6month" style="display:none">Get Started</a>
+      </div>
+
+      <div class="pricing__card">
+        <div class="pricing__plan">Elite</div>
+        <div class="pricing__tier">Armstrong Program</div>
+        <div class="pricing__price price-monthly">$<span></span>668 <span>/mo</span></div>
+        <div class="pricing__price price-6month" style="display:none">$<span></span>3,720 <span>/6mo</span></div>
+        <div class="pricing__price-sub price-monthly">Billed monthly</div>
+        <div class="pricing__price-save price-6month" style="display:none">Save $288 vs monthly</div>
+        <div class="pricing__divider"></div>
+        <ul class="pricing__features">
+          <li>Elite customised nutrition program, training program, step targets, cardio routines</li>
+          <li>Weekly video check-ins with feedback and explanation of adjustments from senior coach</li>
+          <li>Supplement recommendations</li>
+          <li>1-1 Senior Coach WhatsApp support Monday-Saturday afternoon</li>
+          <li>Zoom calls (frequency optional)</li>
+          <li>Form video analysis feedback</li>
+          <li>Private Community group access</li>
+          <li>Mental performance/health support (trusted therapist)</li>
+        </ul>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-elite-us-668-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-elite-us-668-6-months-full" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-6month" style="display:none">Get Started</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="container" data-reveal>
+    <div class="guarantee__shield">
+      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+    </div>
+    <h2 style="white-space:nowrap"><em>Get The Results</em> Or You Don't Pay</h2>
+    <p>We back our programme completely. If you follow the system and don't get the transformation we mapped out together on your call, you don't pay a single cent. Your result is our responsibility.</p>
+  </div>
+  <div style="max-width:1200px;margin:48px auto 0;padding:0 20px" data-reveal>
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-f0936179-0fc9-48e8-a233-8d48e5eb5d5a" data-elfsight-app-lazy></div>
+  </div>
+</section>
+
+
+<!-- PROGRAM -->
+<section class="program">
+  <div class="container" data-reveal>
+    <h2>A <em>Three-Phase</em> Approach That Demands<br>Commitment And Delivers Results.</h2>
+    <p class="program__subtitle">The Physique Academy program is built around three core phases. In every phase, the objective is to achieve the fastest possible results without compromising long term sustainability. We move quickly and execute with intent, but time-lines vary by individual. The system stays the same. The speed depends on the person.</p>
+    <div class="program__phases">
+      <div class="phase-card">
+        <div class="phase-card__header">
+          <span class="phase-card__num">01</span>
+          <span class="phase-card__tag">The Starting Point</span>
+        </div>
+        <h3>Rapid Fat Loss &amp; <em>Foundation</em></h3>
+        <p>Phase 1 focuses on rapid, controlled fat loss while establishing the foundations for long-term success. Get you to roughly 10–12% body fat, the kind of shape where you look like you belong on the cover of a magazine.</p>
+        <p>Phase 1 exists to shatter limiting beliefs, prove what consistency can do, and show you what you can achieve when the strategy is correct. This is where results happen fast, executed intelligently and safely.</p>
+        <div class="phase-card__stats">
+          <div><strong>10–12%</strong> Target Body Fat</div>
+          <div><strong>1000s</strong> Men Transformed</div>
+          <div><strong>100%</strong> Intelligent Execution</div>
+        </div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-card__header">
+          <span class="phase-card__num">02</span>
+          <span class="phase-card__tag">Sustainability And Control</span>
+        </div>
+        <h3>Reverse Diet &amp; Metabolic <em>Reset</em></h3>
+        <p>This is where fat loss stops being temporary and becomes a permanent part of your lifestyle. Phase 2 prevents rebound weight gain and turns short term progress into a stable, repeatable outcome.</p>
+        <p>This phase builds confidence around eating, training, and long term bodyweight management. Calories are increased strategically to restore metabolic function, improve energy levels, and maintain the physique achieved in Phase 1.</p>
+        <div class="phase-card__stats">
+          <div><strong>0%</strong> Rebound Tolerance</div>
+          <div><strong>&#8593;</strong> Metabolic Function</div>
+          <div><strong>&#8734;</strong> Long-Term Control</div>
+        </div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-card__header">
+          <span class="phase-card__num">03</span>
+          <span class="phase-card__tag">Progression Beyond Fat Loss</span>
+        </div>
+        <h3>Build, Perform &amp; <em>Solidify</em></h3>
+        <p>This is where fat loss evolves into strength, performance, and long-term physical capability. Build muscle, increase strength, and pursue specific performance goals -physique, endurance, or sport-based, depending on the individual.</p>
+        <p>Phase 3 solidifies habits, reinforces structure, and establishes a long term standard for training and lifestyle. The outcome is not just improved performance, but the ability to sustain it independently.</p>
+        <div class="phase-card__stats">
+          <div><strong>&#8593;</strong> Muscle &amp; Strength</div>
+          <div><strong>&#9733;</strong> Performance Goals</div>
+          <div><strong>&#10003;</strong> Independent Sustainability</div>
+        </div>
+      </div>
+    </div>
+    <p class="program__endnote">This is not a short-term fix. <em>This is a system for life.</em></p>
+  </div>
+</section>
+
+
+<section class="pricing" id="pricing2">
+  <div class="container" data-reveal>
+    <h2>Ready To <em>Get Started?</em></h2>
+    <div class="pricing__toggle">
+      <button class="pricing__toggle-btn active" onclick="togglePricing('monthly', this)">Monthly</button>
+      <button class="pricing__toggle-btn" onclick="togglePricing('6month', this)">6 Months<span class="pricing__toggle-save">Save</span></button>
+    </div>
+    <div class="pricing__grid">
+
+      <div class="pricing__card">
+        <div class="pricing__plan">Lite</div>
+        <div class="pricing__tier">Armstrong Program</div>
+        <div class="pricing__price price-monthly">$<span></span>247 <span>/mo</span></div>
+        <div class="pricing__price price-6month" style="display:none">$<span></span>1,482 <span>/6mo</span></div>
+        <div class="pricing__price-sub price-monthly">Billed monthly</div>
+        <div class="pricing__price-save price-6month" style="display:none">Pay upfront for 6 months</div>
+        <div class="pricing__divider"></div>
+        <ul class="pricing__features">
+          <li>Customised nutrition program, training program, step targets, cardio routines</li>
+          <li>Bi-weekly video check-ins with feedback and explanation of adjustments</li>
+          <li>Supplement recommendations</li>
+          <li>1-1 Coach WhatsApp support - Monday, Wednesday, Saturday</li>
+          <li>Private Community group access</li>
+        </ul>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-lite-us-247-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-lite-us-247-6-months-full" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-6month" style="display:none">Get Started</a>
+      </div>
+
+      <div class="pricing__card pricing__card--featured">
+        <div class="pricing__popular">Most Popular</div>
+        <div class="pricing__plan">Premium</div>
+        <div class="pricing__tier">Armstrong Program</div>
+        <div class="pricing__price price-monthly">$<span></span>449 <span>/mo</span></div>
+        <div class="pricing__price price-6month" style="display:none">$<span></span>2,309 <span>/6mo</span></div>
+        <div class="pricing__price-sub price-monthly">Billed monthly</div>
+        <div class="pricing__price-save price-6month" style="display:none">Save $385 vs monthly</div>
+        <div class="pricing__divider"></div>
+        <ul class="pricing__features">
+          <li>Premium customised nutrition program, training program, step targets, cardio routines</li>
+          <li>Weekly video check-ins with feedback and explanation of adjustments</li>
+          <li>Supplement recommendations</li>
+          <li>1-1 Coach WhatsApp support Monday-Saturday afternoon</li>
+          <li>Zoom calls every 6 weeks</li>
+          <li>Form video analysis feedback</li>
+          <li>Private Community group access</li>
+          <li>Mental health support (therapist)</li>
+        </ul>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-premium-us-449-6-months" target="_blank" rel="noopener" class="pricing__btn btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-premium-us-449-6-months-full" target="_blank" rel="noopener" class="pricing__btn btn-6month" style="display:none">Get Started</a>
+      </div>
+
+      <div class="pricing__card">
+        <div class="pricing__plan">Elite</div>
+        <div class="pricing__tier">Armstrong Program</div>
+        <div class="pricing__price price-monthly">$<span></span>668 <span>/mo</span></div>
+        <div class="pricing__price price-6month" style="display:none">$<span></span>3,720 <span>/6mo</span></div>
+        <div class="pricing__price-sub price-monthly">Billed monthly</div>
+        <div class="pricing__price-save price-6month" style="display:none">Save $288 vs monthly</div>
+        <div class="pricing__divider"></div>
+        <ul class="pricing__features">
+          <li>Elite customised nutrition program, training program, step targets, cardio routines</li>
+          <li>Weekly video check-ins with feedback and explanation of adjustments from senior coach</li>
+          <li>Supplement recommendations</li>
+          <li>1-1 Senior Coach WhatsApp support Monday-Saturday afternoon</li>
+          <li>Zoom calls (frequency optional)</li>
+          <li>Form video analysis feedback</li>
+          <li>Private Community group access</li>
+          <li>Mental performance/health support (trusted therapist)</li>
+        </ul>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-elite-us-668-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-elite-us-668-6-months-full" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-6month" style="display:none">Get Started</a>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <!-- TRANSFORMATIONS -->
 <section class="transform-section">
   <div style="text-align:center;padding:0 20px" data-reveal>
-    <h2 style="font-size:clamp(26px,4.5vw,48px);font-weight:900;letter-spacing:-.025em;color:var(--text)"><span style="color:var(--green-dark)">Busy Men Just Like You Have</span><br>Transformed Their Lives</h2>
-    <p style="font-size:15px;color:var(--gray);font-style:italic;font-weight:600;margin-top:12px">The difference between these men and the ones still stuck isn't talent or time.<br>It's the decision you're about to make.</p>
+    <h2 style="font-size:clamp(26px,4.5vw,48px);font-weight:900;letter-spacing:-.025em;color:var(--text);line-height:1.05"><span style="color:var(--green-dark)">Busy Men Just Like You Have</span><br><em>Transformed Their Lives</em></h2>
+    <p style="font-size:15px;color:var(--gray);font-style:italic;font-weight:600;margin-top:12px">The difference between these men and the ones still stuck isn't talent or time.<br>It's the decision you just made.</p>
   </div>
   <div class="transform-grid" data-reveal>
     <div class="transform-card" onclick="openLightbox(0)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/jason-wilson.webp" alt="Jason Wilson" loading="lazy"></div><div class="transform-card__name">Jason Wilson</div></div>
@@ -314,190 +580,6 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
   </div>
 </section>
 
-<!-- GUARANTEE -->
-<section class="guarantee">
-  <div class="container" data-reveal>
-    <div class="guarantee__shield">
-      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-    </div>
-    <h2><em>Get The Results</em> Or You Don't Pay</h2>
-    <p>We back our programme completely. If you follow the system and don't get the transformation we mapped out together on your call, you don't pay a single cent. Your result is our responsibility.</p>
-  </div>
-  <div style="max-width:1200px;margin:48px auto 0;padding:0 20px" data-reveal>
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-    <div class="elfsight-app-f0936179-0fc9-48e8-a233-8d48e5eb5d5a" data-elfsight-app-lazy></div>
-  </div>
-</section>
-
-<!-- PROGRAM -->
-<section class="program">
-  <div class="container" data-reveal>
-    <h2>This Is The <em>Program</em> You'll Ever<br>Need To Get In The Best Shape Of Your Life</h2>
-    <p class="program__subtitle">Everything is built around your life, not the other way around</p>
-    <div class="program__grid">
-      <div class="program__card">
-        <div class="program__card-icon">&#127947;</div>
-        <h3>Custom Training Plan</h3>
-        <p>Personalised workouts designed around your schedule, equipment access, and experience level. Updated every phase as you progress.</p>
-      </div>
-      <div class="program__card">
-        <div class="program__card-icon">&#127860;</div>
-        <h3>Tailored Nutrition Plan</h3>
-        <p>Flexible meal plans that fit your food preferences, lifestyle, and social life. No cookie-cutter diets. No starving yourself.</p>
-      </div>
-      <div class="program__card">
-        <div class="program__card-icon">&#128202;</div>
-        <h3>Weekly Check-Ins</h3>
-        <p>Your coach reviews your progress every single week. Adjustments to training and nutrition so you never plateau or stall.</p>
-      </div>
-      <div class="program__card">
-        <div class="program__card-icon">&#128170;</div>
-        <h3>Progressive Overload Tracking</h3>
-        <p>Structured progression that ensures you're building muscle and strength consistently — not just going through the motions.</p>
-      </div>
-      <div class="program__card">
-        <div class="program__card-icon">&#128218;</div>
-        <h3>Educational Resources</h3>
-        <p>Understand the "why" behind everything. Learn how to sustain your results long after the programme ends.</p>
-      </div>
-      <div class="program__card">
-        <div class="program__card-icon">&#128736;</div>
-        <h3>Supplement Guidance</h3>
-        <p>Clear, no-BS advice on what actually works and what's a waste of money. Evidence-based recommendations only.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SUPPORT -->
-<section class="support">
-  <div class="container" data-reveal>
-    <h2>This Is The <em>Support</em> You'll Get For<br>The Best Results Of Your Life</h2>
-    <p class="support__subtitle">You're never alone in this — your coach is with you every step</p>
-    <div class="support__grid">
-      <div class="support__item">
-        <div class="support__item-icon">&#128172;</div>
-        <div>
-          <h3>Direct Coach Access</h3>
-          <p>Message your personal coach anytime via WhatsApp. Got a question at 10pm? Fire it over. Real support, real fast.</p>
-        </div>
-      </div>
-      <div class="support__item">
-        <div class="support__item-icon">&#127909;</div>
-        <div>
-          <h3>Video Form Checks</h3>
-          <p>Submit exercise videos and get detailed feedback so you're training safely and getting the most out of every rep.</p>
-        </div>
-      </div>
-      <div class="support__item">
-        <div class="support__item-icon">&#128101;</div>
-        <div>
-          <h3>Private Community</h3>
-          <p>Join a group of driven men on the same mission. Share wins, get motivation, and stay accountable together.</p>
-        </div>
-      </div>
-      <div class="support__item">
-        <div class="support__item-icon">&#128337;</div>
-        <div>
-          <h3>Rapid Response Times</h3>
-          <p>No waiting days for replies. Your coach responds within hours — because momentum matters and we don't let you lose it.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESULTS / TESTIMONIALS -->
-<section class="results">
-  <div class="container" data-reveal>
-    <h2>This Is The Reason <em>You'll Get The<br>Best Result Of Your Life</em></h2>
-    <p class="results__subtitle">Hear it directly from men who stopped waiting &amp; took action</p>
-  </div>
-  <div class="testi-scroll" data-reveal>
-    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/v6wrydquwp.js" async type="module"></script><style>wistia-player[media-id='v6wrydquwp']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/v6wrydquwp/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="v6wrydquwp" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Ross G</div><div class="testi-card__result">Coach Dylan</div></div></div>
-    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/ov6y7cwejr.js" async type="module"></script><style>wistia-player[media-id='ov6y7cwejr']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/ov6y7cwejr/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="ov6y7cwejr" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Nate M</div><div class="testi-card__result">Coach Adam</div></div></div>
-    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/hjwdqzarde.js" async type="module"></script><style>wistia-player[media-id='hjwdqzarde']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/hjwdqzarde/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="hjwdqzarde" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Matt B</div><div class="testi-card__result">Coach Zayne</div></div></div>
-    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/mr9467u1c2.js" async type="module"></script><style>wistia-player[media-id='mr9467u1c2']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/mr9467u1c2/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="mr9467u1c2" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Hans R</div><div class="testi-card__result">Coach Kris</div></div></div>
-    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/tnsmwnukaj.js" async type="module"></script><style>wistia-player[media-id='tnsmwnukaj']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/tnsmwnukaj/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="tnsmwnukaj" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">David M</div><div class="testi-card__result">Coach Danny</div></div></div>
-    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/kc82ibgltk.js" async type="module"></script><style>wistia-player[media-id='kc82ibgltk']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/kc82ibgltk/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="kc82ibgltk" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Jamie D</div><div class="testi-card__result">Coach Adam</div></div></div>
-    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/bqfnlg1d6w.js" async type="module"></script><style>wistia-player[media-id='bqfnlg1d6w']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/bqfnlg1d6w/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="bqfnlg1d6w" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Marc K</div><div class="testi-card__result">Coach Ash</div></div></div>
-    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/j7ot6eeo0c.js" async type="module"></script><style>wistia-player[media-id='j7ot6eeo0c']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/j7ot6eeo0c/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="j7ot6eeo0c" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Joe S</div><div class="testi-card__result">Coach Kris</div></div></div>
-    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/hbpw88758w.js" async type="module"></script><style>wistia-player[media-id='hbpw88758w']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/hbpw88758w/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="hbpw88758w" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Rob J</div><div class="testi-card__result">Coach Connor</div></div></div>
-    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/pjlzx8jn96.js" async type="module"></script><style>wistia-player[media-id='pjlzx8jn96']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/pjlzx8jn96/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="pjlzx8jn96" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Damien M</div><div class="testi-card__result">Coach Ash</div></div></div>
-    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/cgg7c79ggc.js" async type="module"></script><style>wistia-player[media-id='cgg7c79ggc']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/cgg7c79ggc/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="cgg7c79ggc" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Craig D</div><div class="testi-card__result">Coach Sam</div></div></div>
-    <div class="testi-card"><div class="testi-card__thumb"><script src="https://fast.wistia.com/embed/x31cxixvo2.js" async type="module"></script><style>wistia-player[media-id='x31cxixvo2']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/x31cxixvo2/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style><wistia-player media-id="x31cxixvo2" aspect="0.5625"></wistia-player></div><div class="testi-card__body"><div class="testi-card__name">Chris M</div><div class="testi-card__result">Coach Kris</div></div></div>
-  </div>
-  <p class="scroll-hint" data-reveal>&#8592; Swipe to see more testimonials &#8594;</p>
-</section>
-
-<!-- PRICING -->
-<section class="pricing" id="pricing">
-  <div class="container" data-reveal>
-    <h2>Experience <em>World-Class Coaching</em></h2>
-    <p class="pricing__subtitle">Choose the plan that fits your goals and commitment level</p>
-    <div class="pricing__grid">
-
-      <!-- 3 MONTH -->
-      <div class="pricing__card">
-        <div class="pricing__plan">Kickstart</div>
-        <div class="pricing__duration">3 Month Programme</div>
-        <div class="pricing__price"><span>&#163;</span>297 <span>/mo</span></div>
-        <div class="pricing__period">&#163;891 total &middot; billed monthly</div>
-        <div class="pricing__divider"></div>
-        <ul class="pricing__features">
-          <li>Personalised training programme</li>
-          <li>Custom nutrition plan</li>
-          <li>Weekly check-ins with your coach</li>
-          <li>Direct WhatsApp access to your coach</li>
-          <li>Video form checks</li>
-          <li>Supplement guidance</li>
-          <li>Private community access</li>
-        </ul>
-        <a href="https://wa.me/971585635230?text=Hi!%20I'm%20interested%20in%20the%203-month%20Kickstart%20programme.%20Can%20you%20tell%20me%20more?" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline">Get Started</a>
-      </div>
-
-      <!-- 6 MONTH (FEATURED) -->
-      <div class="pricing__card pricing__card--featured">
-        <div class="pricing__popular">Most Popular</div>
-        <div class="pricing__plan">Transformation</div>
-        <div class="pricing__duration">6 Month Programme</div>
-        <div class="pricing__price"><span>&#163;</span>247 <span>/mo</span></div>
-        <div class="pricing__period">&#163;1,482 total &middot; billed monthly</div>
-        <div class="pricing__divider"></div>
-        <ul class="pricing__features">
-          <li>Everything in Kickstart</li>
-          <li>Extended progressive programming</li>
-          <li>Nutrition phase transitions</li>
-          <li>Priority coach response times</li>
-          <li>Bi-weekly strategy calls</li>
-          <li>Results guarantee</li>
-          <li>Body composition analysis</li>
-        </ul>
-        <a href="https://wa.me/971585635230?text=Hi!%20I'm%20interested%20in%20the%206-month%20Transformation%20programme.%20Can%20you%20tell%20me%20more?" target="_blank" rel="noopener" class="pricing__btn">Get Started</a>
-      </div>
-
-      <!-- 12 MONTH -->
-      <div class="pricing__card">
-        <div class="pricing__plan">Elite</div>
-        <div class="pricing__duration">12 Month Programme</div>
-        <div class="pricing__price"><span>&#163;</span>197 <span>/mo</span></div>
-        <div class="pricing__period">&#163;2,364 total &middot; billed monthly</div>
-        <div class="pricing__divider"></div>
-        <ul class="pricing__features">
-          <li>Everything in Transformation</li>
-          <li>Full year of coaching &amp; accountability</li>
-          <li>Multiple bulk/cut cycles</li>
-          <li>Advanced periodisation</li>
-          <li>Lifestyle &amp; habit coaching</li>
-          <li>Exclusive Elite community</li>
-          <li>Lifetime maintenance plan</li>
-        </ul>
-        <a href="https://wa.me/971585635230?text=Hi!%20I'm%20interested%20in%20the%2012-month%20Elite%20programme.%20Can%20you%20tell%20me%20more?" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline">Get Started</a>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- BOTTOM CTA -->
 <section class="bottom-cta">
@@ -520,12 +602,28 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 </footer>
 
 <script>
+function openExcuseImg(el) {
+  const img = el.querySelector('img');
+  document.getElementById('lb-img').src = img.src;
+  document.getElementById('lb-img').alt = img.alt;
+  document.getElementById('lb-name').textContent = img.alt;
+  document.getElementById('lb-counter').textContent = '';
+  document.getElementById('lightbox').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function togglePricing(type, btn) {
+  document.querySelectorAll('.pricing__toggle-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.price-monthly, .btn-monthly').forEach(el => el.style.display = type === 'monthly' ? '' : 'none');
+  document.querySelectorAll('.price-6month, .btn-6month').forEach(el => el.style.display = type === '6month' ? '' : 'none');
+}
 const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target)}})},{threshold:.06});
 document.querySelectorAll('[data-reveal]').forEach(el=>obs.observe(el));
 const imgs=[{src:'https://physique-academy.s3.amazonaws.com/transformations/jason-wilson.webp',name:'Jason Wilson'},{src:'https://physique-academy.s3.amazonaws.com/transformations/craig-dinblebee.webp',name:'Craig Dimblebee'},{src:'https://physique-academy.s3.amazonaws.com/transformations/damien-barr.webp',name:'Damian Barr'},{src:'https://physique-academy.s3.amazonaws.com/transformations/dave-hanrahan.webp',name:'Dave Hanrahan'},{src:'https://physique-academy.s3.amazonaws.com/transformations/tony-kopa.webp',name:'Tony Kopa'},{src:'https://physique-academy.s3.amazonaws.com/transformations/federico-testa.webp',name:'Federico Testa'},{src:'https://physique-academy.s3.amazonaws.com/transformations/joe-smithey.webp',name:'Joe Smithey'},{src:'https://physique-academy.s3.amazonaws.com/transformations/reed-burton.webp',name:'Reed Burton'},{src:'https://physique-academy.s3.amazonaws.com/transformations/ricardo-escobedo.webp',name:'Ricardo Escobedo'},{src:'https://physique-academy.s3.amazonaws.com/transformations/russell-smalley.webp',name:'Russell Smalley'},{src:'https://physique-academy.s3.amazonaws.com/transformations/steven-manirath.webp',name:'Steven Manirath'},{src:'https://physique-academy.s3.amazonaws.com/transformations/alex-bond.webp',name:'Alex Bond'},{src:'https://physique-academy.s3.amazonaws.com/transformations/joe-schafer.webp',name:'Joe Schafer'},{src:'https://physique-academy.s3.amazonaws.com/transformations/sean-kelly.webp',name:'Sean Kelly'},{src:'https://physique-academy.s3.amazonaws.com/transformations/tim-giessauf.webp',name:'Tim Giessauf'},{src:'https://physique-academy.s3.amazonaws.com/transformations/luke-salmons.webp',name:'Luke Salmons'},{src:'https://physique-academy.s3.amazonaws.com/transformations/hans-rennings.webp',name:'Hans Rennings'},{src:'https://physique-academy.s3.amazonaws.com/transformations/brad-bond.webp',name:'Brad Bond'},{src:'https://physique-academy.s3.amazonaws.com/transformations/zack-bennema.webp',name:'Zack Bennema'},{src:'https://physique-academy.s3.amazonaws.com/transformations/aaron-lake.webp',name:'Aaron Lake'},{src:'https://physique-academy.s3.amazonaws.com/transformations/jake-mcdonell.webp',name:'Jake McDonell'},{src:'https://physique-academy.s3.amazonaws.com/transformations/jake-carus.webp',name:'Jake Carus'},{src:'https://physique-academy.s3.amazonaws.com/transformations/andy-taylor.webp',name:'Andy Taylor'},{src:'https://physique-academy.s3.amazonaws.com/transformations/alex-purcell.webp',name:'Alex Purcell'}];
 let ci=0;function show(i){ci=(i+imgs.length)%imgs.length;document.getElementById('lb-img').src=imgs[ci].src;document.getElementById('lb-img').alt=imgs[ci].name;document.getElementById('lb-name').textContent=imgs[ci].name;document.getElementById('lb-counter').textContent=(ci+1)+' / '+imgs.length}
 function openLightbox(i){document.getElementById('lightbox').style.display='flex';document.body.style.overflow='hidden';show(i)}
 function closeLightbox(){document.getElementById('lightbox').style.display='none';document.body.style.overflow=''}
+document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox()});
 function nextImage(){show(ci+1)}function prevImage(){show(ci-1)}
 document.addEventListener('keydown',e=>{if(document.getElementById('lightbox').style.display!=='flex')return;if(e.key==='Escape')closeLightbox();if(e.key==='ArrowRight')nextImage();if(e.key==='ArrowLeft')prevImage()});
 </script>
