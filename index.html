@@ -141,6 +141,10 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .pricing h2{font-size:clamp(26px,4.5vw,44px);font-weight:900;letter-spacing:-.025em;color:var(--text);line-height:1.1}
 .pricing h2 em{font-style:normal;color:var(--green)}
 .pricing__subtitle{font-size:14px;color:var(--gray);margin-top:10px;font-weight:600}
+.pricing__toggle{display:inline-flex;background:var(--white);border:2px solid var(--border);border-radius:50px;padding:4px;margin-top:28px;position:relative}
+.pricing__toggle-btn{padding:10px 28px;border-radius:50px;border:none;background:transparent;font-size:14px;font-weight:700;font-family:'Inter',sans-serif;color:var(--gray);cursor:pointer;transition:all .3s;position:relative;z-index:1}
+.pricing__toggle-btn.active{background:var(--green);color:#000}
+.pricing__toggle-save{font-size:10px;font-weight:800;color:var(--green);background:rgba(127,200,56,0.1);padding:2px 8px;border-radius:10px;margin-left:6px;vertical-align:middle}
 .pricing__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px;align-items:start}
 .pricing__card{background:var(--white);border:2px solid var(--border);border-radius:20px;padding:36px 28px;position:relative;transition:transform .3s,box-shadow .3s}
 .pricing__card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.08)}
@@ -228,6 +232,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
   .pricing__card--featured{transform:none;padding:28px 20px}
   .pricing__card--featured:hover{transform:translateY(-6px)}
   .pricing__price{font-size:clamp(32px,8vw,42px)}
+  .pricing__toggle-btn{padding:8px 18px;font-size:12px}
   .excuse-grid{grid-template-columns:1fr}
   .testi-scroll{grid-template-columns:repeat(2,1fr);gap:12px;padding:32px 15px 15px}
   .testi-card{min-width:0}
@@ -343,12 +348,18 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 <section class="pricing" id="pricing">
   <div class="container" data-reveal>
     <h2>Experience <em>World-Class Coaching</em></h2>
+    <div class="pricing__toggle">
+      <button class="pricing__toggle-btn active" onclick="togglePricing('monthly', this)">Monthly</button>
+      <button class="pricing__toggle-btn" onclick="togglePricing('6month', this)">6 Months<span class="pricing__toggle-save">Save</span></button>
+    </div>
     <div class="pricing__grid">
 
       <div class="pricing__card">
         <div class="pricing__plan">Lite</div>
-        <div class="pricing__price">$<span></span>247 <span>/mo</span></div>
-        <div class="pricing__price-sub">Billed monthly</div>
+        <div class="pricing__price price-monthly">$<span></span>247 <span>/mo</span></div>
+        <div class="pricing__price price-6month" style="display:none">$<span></span>1,482 <span>/6mo</span></div>
+        <div class="pricing__price-sub price-monthly">Billed monthly</div>
+        <div class="pricing__price-save price-6month" style="display:none">Pay upfront for 6 months</div>
         <div class="pricing__divider"></div>
         <p class="pricing__desc">A streamlined coaching option for clients who can stay consistent without constant oversight. Simple structure. Proven system. Solid results.</p>
         <ul class="pricing__features">
@@ -359,14 +370,16 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
           <li>Exercise Technique/Form video analysis feedback</li>
           <li>Private Community Group Access</li>
         </ul>
-        <a href="https://billing.physiqueacademy.com/armstrong-program-lite-us-247-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline">Get Started</a>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-lite-us-247-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-lite-us-247-6-months-full" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-6month" style="display:none">Get Started</a>
       </div>
 
       <div class="pricing__card pricing__card--featured">
         <div class="pricing__popular">Most Popular</div>
         <div class="pricing__plan">Premium</div>
-        <div class="pricing__price">$<span></span>449 <span>/mo</span></div>
-        <div class="pricing__price-sub">Billed monthly</div>
+        <div class="pricing__price price-monthly">$<span></span>449 <span>/mo</span></div>
+        <div class="pricing__price price-6month" style="display:none">$<span></span>2,309 <span>/6mo</span></div>
+        <div class="pricing__price-sub price-monthly">Billed monthly</div>
+        <div class="pricing__price-save price-6month" style="display:none">Save $385 vs monthly</div>
         <div class="pricing__divider"></div>
         <p class="pricing__desc">Our most in-demand coaching experience designed for clients who want faster results and elevated support.</p>
         <ul class="pricing__features">
@@ -379,13 +392,15 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
           <li>Mental health/performance support (licensed psychologist)</li>
           <li>Zoom catch up calls every 6 weeks road mapping your future goals, expectations and progress</li>
         </ul>
-        <a href="https://billing.physiqueacademy.com/armstrong-program-premium-us-449-6-months" target="_blank" rel="noopener" class="pricing__btn">Get Started</a>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-premium-us-449-6-months" target="_blank" rel="noopener" class="pricing__btn btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-premium-us-449-6-months-full" target="_blank" rel="noopener" class="pricing__btn btn-6month" style="display:none">Get Started</a>
       </div>
 
       <div class="pricing__card">
         <div class="pricing__plan">Elite</div>
-        <div class="pricing__price">$<span></span>668 <span>/mo</span></div>
-        <div class="pricing__price-sub">Billed monthly</div>
+        <div class="pricing__price price-monthly">$<span></span>668 <span>/mo</span></div>
+        <div class="pricing__price price-6month" style="display:none">$<span></span>3,720 <span>/6mo</span></div>
+        <div class="pricing__price-sub price-monthly">Billed monthly</div>
+        <div class="pricing__price-save price-6month" style="display:none">Save $288 vs monthly</div>
         <div class="pricing__divider"></div>
         <p class="pricing__desc">Our most advanced level of coaching for clients who operate at the highest standard. Work directly with our top head coaches.</p>
         <ul class="pricing__features">
@@ -398,7 +413,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
           <li>Mental health/performance support (licensed psychologist)</li>
           <li>On-demand Zoom calls, assess progress, adjust strategy, and plan next steps in real time</li>
         </ul>
-        <a href="https://billing.physiqueacademy.com/armstrong-program-elite-us-668-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline">Get Started</a>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-elite-us-668-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-elite-us-668-6-months-full" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-6month" style="display:none">Get Started</a>
       </div>
 
     </div>
@@ -586,12 +601,18 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 <section class="pricing" id="pricing2">
   <div class="container" data-reveal>
     <h2>Ready To <em>Get Started?</em></h2>
+    <div class="pricing__toggle">
+      <button class="pricing__toggle-btn active" onclick="togglePricing('monthly', this)">Monthly</button>
+      <button class="pricing__toggle-btn" onclick="togglePricing('6month', this)">6 Months<span class="pricing__toggle-save">Save</span></button>
+    </div>
     <div class="pricing__grid">
 
       <div class="pricing__card">
         <div class="pricing__plan">Lite</div>
-        <div class="pricing__price">$<span></span>247 <span>/mo</span></div>
-        <div class="pricing__price-sub">Billed monthly</div>
+        <div class="pricing__price price-monthly">$<span></span>247 <span>/mo</span></div>
+        <div class="pricing__price price-6month" style="display:none">$<span></span>1,482 <span>/6mo</span></div>
+        <div class="pricing__price-sub price-monthly">Billed monthly</div>
+        <div class="pricing__price-save price-6month" style="display:none">Pay upfront for 6 months</div>
         <div class="pricing__divider"></div>
         <p class="pricing__desc">A streamlined coaching option for clients who can stay consistent without constant oversight. Simple structure. Proven system. Solid results.</p>
         <ul class="pricing__features">
@@ -602,14 +623,16 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
           <li>Exercise Technique/Form video analysis feedback</li>
           <li>Private Community Group Access</li>
         </ul>
-        <a href="https://billing.physiqueacademy.com/armstrong-program-lite-us-247-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline">Get Started</a>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-lite-us-247-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-lite-us-247-6-months-full" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-6month" style="display:none">Get Started</a>
       </div>
 
       <div class="pricing__card pricing__card--featured">
         <div class="pricing__popular">Most Popular</div>
         <div class="pricing__plan">Premium</div>
-        <div class="pricing__price">$<span></span>449 <span>/mo</span></div>
-        <div class="pricing__price-sub">Billed monthly</div>
+        <div class="pricing__price price-monthly">$<span></span>449 <span>/mo</span></div>
+        <div class="pricing__price price-6month" style="display:none">$<span></span>2,309 <span>/6mo</span></div>
+        <div class="pricing__price-sub price-monthly">Billed monthly</div>
+        <div class="pricing__price-save price-6month" style="display:none">Save $385 vs monthly</div>
         <div class="pricing__divider"></div>
         <p class="pricing__desc">Our most in-demand coaching experience designed for clients who want faster results and elevated support.</p>
         <ul class="pricing__features">
@@ -622,13 +645,15 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
           <li>Mental health/performance support (licensed psychologist)</li>
           <li>Zoom catch up calls every 6 weeks road mapping your future goals, expectations and progress</li>
         </ul>
-        <a href="https://billing.physiqueacademy.com/armstrong-program-premium-us-449-6-months" target="_blank" rel="noopener" class="pricing__btn">Get Started</a>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-premium-us-449-6-months" target="_blank" rel="noopener" class="pricing__btn btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-premium-us-449-6-months-full" target="_blank" rel="noopener" class="pricing__btn btn-6month" style="display:none">Get Started</a>
       </div>
 
       <div class="pricing__card">
         <div class="pricing__plan">Elite</div>
-        <div class="pricing__price">$<span></span>668 <span>/mo</span></div>
-        <div class="pricing__price-sub">Billed monthly</div>
+        <div class="pricing__price price-monthly">$<span></span>668 <span>/mo</span></div>
+        <div class="pricing__price price-6month" style="display:none">$<span></span>3,720 <span>/6mo</span></div>
+        <div class="pricing__price-sub price-monthly">Billed monthly</div>
+        <div class="pricing__price-save price-6month" style="display:none">Save $288 vs monthly</div>
         <div class="pricing__divider"></div>
         <p class="pricing__desc">Our most advanced level of coaching for clients who operate at the highest standard. Work directly with our top head coaches.</p>
         <ul class="pricing__features">
@@ -641,7 +666,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
           <li>Mental health/performance support (licensed psychologist)</li>
           <li>On-demand Zoom calls, assess progress, adjust strategy, and plan next steps in real time</li>
         </ul>
-        <a href="https://billing.physiqueacademy.com/armstrong-program-elite-us-668-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline">Get Started</a>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-elite-us-668-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-elite-us-668-6-months-full" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-6month" style="display:none">Get Started</a>
       </div>
 
     </div>
@@ -692,6 +717,14 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
 <script>
 function openBookingModal(){document.getElementById('bookingModal').classList.add('active');document.body.style.overflow='hidden'}
+function togglePricing(type, btn){
+  document.querySelectorAll('.pricing__toggle-btn').forEach(b=>{
+    const isThisType=(type==='monthly'&&b.textContent.trim().startsWith('Monthly'))||(type==='6month'&&b.textContent.trim().startsWith('6 Months'));
+    b.classList.toggle('active',isThisType);
+  });
+  document.querySelectorAll('.price-monthly, .btn-monthly').forEach(el=>el.style.display=type==='monthly'?'':'none');
+  document.querySelectorAll('.price-6month, .btn-6month').forEach(el=>el.style.display=type==='6month'?'':'none');
+}
 function closeBookingModal(){document.getElementById('bookingModal').classList.remove('active');document.body.style.overflow=''}
 document.getElementById('bookingModal').addEventListener('click',function(e){if(e.target===this)closeBookingModal()});
 
