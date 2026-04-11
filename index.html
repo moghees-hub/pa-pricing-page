@@ -18,7 +18,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .top-bar__text{color:var(--text);font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px}
 .top-bar__dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 1.6s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.6)}}
-.top-bar__btn{background:var(--green);color:#000;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 18px;border-radius:20px;text-decoration:none;transition:transform .2s,background .2s;white-space:nowrap}
+.top-bar__btn{background:var(--green);color:#000;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 18px;border-radius:20px;text-decoration:none;transition:transform .2s,background .2s;white-space:nowrap;cursor:pointer;border:none;font-family:'Inter',sans-serif}
 .top-bar__btn:hover{transform:scale(1.05);background:#8fd44a}
 
 /* FLOATING WHATSAPP */
@@ -31,20 +31,20 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 [data-reveal].visible{opacity:1;transform:none}
 
-/* HERO - kept dark for impact */
-.hero{background:var(--black);padding:100px 0 64px;text-align:center;position:relative;overflow:hidden;min-height:90vh;display:flex;align-items:center}
-.hero::before{content:'';position:absolute;top:-150px;left:50%;transform:translateX(-50%);width:1000px;height:700px;background:radial-gradient(ellipse,rgba(127,200,56,0.06) 0%,transparent 60%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(transparent,var(--black));pointer-events:none}
+/* HERO - light theme */
+.hero{background:var(--white);padding:100px 0 64px;text-align:center;position:relative;overflow:hidden;min-height:90vh;display:flex;align-items:center}
+.hero::before{display:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(transparent,var(--white));pointer-events:none}
 .hero .container{position:relative;z-index:1;width:100%;max-width:860px;margin:0 auto;padding:0 20px}
-.hero__badge{display:inline-flex;align-items:center;gap:10px;background:rgba(127,200,56,0.1);border:1px solid rgba(127,200,56,0.25);color:var(--green);font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;padding:10px 24px;border-radius:30px;margin-bottom:36px}
+.hero__badge{display:inline-flex;align-items:center;gap:10px;background:var(--black);border:1px solid rgba(255,255,255,0.1);color:var(--white);font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;padding:10px 24px;border-radius:30px;margin-bottom:36px}
 .hero__badge svg{width:18px;height:18px;fill:var(--green)}
-.hero h1{font-size:clamp(28px,4.2vw,48px);font-weight:900;line-height:1.1;letter-spacing:-.035em;color:var(--white);margin-bottom:20px;text-align:center}
+.hero h1{font-size:clamp(28px,4.2vw,48px);font-weight:900;line-height:1.1;letter-spacing:-.035em;color:var(--text);margin-bottom:20px;text-align:center}
 .hero h1 em{font-style:normal;color:var(--green)}
-.hero__sub{font-size:16px;color:#999;font-weight:500;margin-bottom:0;max-width:600px;margin-left:auto;margin-right:auto}
-.hero__sub strong{color:var(--white);font-weight:700}
-.hero__cta{display:inline-block;background:var(--green);color:#000;font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:16px 36px;border-radius:8px;text-decoration:none;transition:transform .2s,background .2s;margin-top:28px;margin-bottom:32px}
+.hero__sub{font-size:16px;color:var(--text-secondary);font-weight:500;margin-bottom:0;max-width:600px;margin-left:auto;margin-right:auto}
+.hero__sub strong{color:var(--text);font-weight:700}
+.hero__cta{display:inline-block;background:var(--green);color:#000;font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:16px 36px;border-radius:8px;text-decoration:none;transition:transform .2s,background .2s;margin-top:28px;margin-bottom:32px;cursor:pointer;border:none;font-family:'Inter',sans-serif}
 .hero__cta:hover{transform:scale(1.05);background:#8fd44a}
-.video-wrap{max-width:760px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 0 80px rgba(127,200,56,0.08),0 20px 60px rgba(0,0,0,0.5);border:1px solid rgba(127,200,56,0.1)}
+.video-wrap{max-width:760px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 0 60px rgba(0,0,0,0.08),0 20px 60px rgba(0,0,0,0.1);border:1px solid var(--border)}
 
 /* SOCIAL PROOF BAR */
 .proof-bar{background:var(--light);border-bottom:1px solid var(--border);padding:28px 0}
@@ -141,10 +141,6 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .pricing h2{font-size:clamp(26px,4.5vw,44px);font-weight:900;letter-spacing:-.025em;color:var(--text);line-height:1.1}
 .pricing h2 em{font-style:normal;color:var(--green)}
 .pricing__subtitle{font-size:14px;color:var(--gray);margin-top:10px;font-weight:600}
-.pricing__toggle{display:inline-flex;background:var(--white);border:2px solid var(--border);border-radius:50px;padding:4px;margin-top:28px;position:relative}
-.pricing__toggle-btn{padding:10px 28px;border-radius:50px;border:none;background:transparent;font-size:14px;font-weight:700;font-family:'Inter',sans-serif;color:var(--gray);cursor:pointer;transition:all .3s;position:relative;z-index:1}
-.pricing__toggle-btn.active{background:var(--green);color:#000}
-.pricing__toggle-save{font-size:10px;font-weight:800;color:var(--green);background:rgba(127,200,56,0.1);padding:2px 8px;border-radius:10px;margin-left:6px;vertical-align:middle}
 .pricing__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px;align-items:start}
 .pricing__card{background:var(--white);border:2px solid var(--border);border-radius:20px;padding:36px 28px;position:relative;transition:transform .3s,box-shadow .3s}
 .pricing__card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.08)}
@@ -158,13 +154,28 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .pricing__price-sub{font-size:12px;color:var(--gray);font-weight:500;margin-top:4px;min-height:18px}
 .pricing__price-save{font-size:12px;color:var(--green);font-weight:700;margin-top:4px;min-height:18px}
 .pricing__divider{width:100%;height:1px;background:var(--border);margin:20px 0}
+.pricing__desc{font-size:13px;color:var(--text-secondary);line-height:1.6;text-align:left;margin-bottom:16px;font-style:italic}
 .pricing__features{list-style:none;text-align:left;margin-bottom:24px}
 .pricing__features li{font-size:13px;color:var(--text-secondary);padding:7px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.5}
 .pricing__features li::before{content:'\2713';color:var(--green);font-weight:800;font-size:13px;flex-shrink:0;margin-top:1px}
-.pricing__btn{display:inline-block;width:100%;background:var(--green);color:#000;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:14px 24px;border-radius:50px;text-decoration:none;border:none;cursor:pointer;transition:transform .25s,box-shadow .25s;box-shadow:0 4px 20px rgba(127,200,56,0.25)}
+.pricing__btn{display:inline-block;width:100%;background:var(--green);color:#000;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:14px 24px;border-radius:50px;text-decoration:none;border:none;cursor:pointer;transition:transform .25s,box-shadow .25s;box-shadow:0 4px 20px rgba(127,200,56,0.25);font-family:'Inter',sans-serif}
 .pricing__btn:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(127,200,56,0.4)}
 .pricing__btn--outline{background:var(--white);border:2px solid var(--border);color:var(--text);box-shadow:none}
 .pricing__btn--outline:hover{border-color:var(--green);color:var(--green);box-shadow:0 4px 20px rgba(127,200,56,0.15)}
+.pricing__btn-sub{font-size:11px;color:var(--gray);font-weight:500;margin-top:8px;letter-spacing:.01em}
+
+/* TIER SELECTOR */
+.tier-select{background:var(--light);padding:50px 0;text-align:center;border-bottom:1px solid var(--border)}
+.tier-select .container{max-width:900px;margin:0 auto;padding:0 20px}
+.tier-select h2{font-size:clamp(24px,3.5vw,38px);font-weight:900;letter-spacing:-.025em;color:var(--text);line-height:1.1;margin-bottom:12px}
+.tier-select h2 em{font-style:normal;color:var(--green-dark)}
+.tier-select__sub{font-size:16px;color:var(--text-secondary);margin-bottom:36px}
+.tier-select__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left}
+.tier-select__item{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:24px;transition:transform .3s,box-shadow .3s}
+.tier-select__item:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,0.06)}
+.tier-select__label{font-size:13px;font-weight:800;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.tier-select__text{font-size:14px;color:var(--text-secondary);line-height:1.6}
+@media(max-width:768px){.tier-select__grid{grid-template-columns:1fr}}
 
 /* BOTTOM CTA */
 .bottom-cta{background:var(--white);padding:50px 0;text-align:center;border-top:1px solid var(--border)}
@@ -182,6 +193,18 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 #lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.94);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px}
 .lb-btn{position:absolute;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
 .lb-btn:hover{background:rgba(127,200,56,0.2)}
+
+/* BOOKING MODAL */
+.booking-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.7);z-index:9998;opacity:0;transition:opacity .3s ease}
+.booking-overlay.active{display:block;opacity:1}
+.booking-modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.9);width:90%;max-width:600px;max-height:90vh;background:#fff;border-radius:12px;z-index:9999;opacity:0;transition:all .3s ease;box-shadow:0 10px 40px rgba(0,0,0,0.3);display:flex;flex-direction:column}
+.booking-overlay.active .booking-modal{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.booking-modal-close{position:absolute;top:15px;right:15px;width:32px;height:32px;background:rgba(0,0,0,0.1);border:none;border-radius:50%;cursor:pointer;z-index:10000;display:flex;align-items:center;justify-content:center;transition:background .2s ease}
+.booking-modal-close:hover{background:rgba(0,0,0,0.2)}
+.booking-modal-close::before,.booking-modal-close::after{content:'';position:absolute;width:16px;height:2px;background:#333}
+.booking-modal-close::before{transform:rotate(45deg)}
+.booking-modal-close::after{transform:rotate(-45deg)}
+.booking-modal-content{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
 
 /* RESPONSIVE */
 @media(max-width:768px){
@@ -211,7 +234,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
   .transform-grid{grid-template-columns:repeat(2,1fr)}
   .top-bar{gap:10px}
   .top-bar__text{font-size:11px}
-  .pricing__toggle-btn{padding:8px 18px;font-size:12px}
+  .booking-modal{width:95%;max-height:85vh}
 }
 @media(max-width:480px){
   .hero h1{font-size:clamp(20px,6.5vw,28px)}
@@ -235,7 +258,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 <!-- STICKY TOP BAR -->
 <div class="top-bar">
   <span class="top-bar__text"><span class="top-bar__dot"></span> Limited Spots Available</span>
-  <a href="#pricing" class="top-bar__btn">See Pricing</a>
+  <a href="javascript:void(0);" onclick="openBookingModal()" class="top-bar__btn">Book A Call</a>
 </div>
 
 <!-- FLOATING WHATSAPP -->
@@ -254,11 +277,11 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
     </div>
     <h1 data-reveal><span style="white-space:nowrap">The Man You Are On The Inside</span> <br><em style="white-space:nowrap">Deserves To Show On The Outside.</em></h1>
     <p class="hero__sub" data-reveal>Getting in great shape doesn't have to be a full time job. The men's lives we have transformed weren't all gym buffs. Building an incredible physique just takes <strong style="white-space:nowrap">the right system.</strong></p>
-    <a href="#pricing" class="hero__cta" data-reveal>START YOUR TRANSFORMATION FROM $247/PM</a>
+    <a href="javascript:void(0);" onclick="openBookingModal()" class="hero__cta" data-reveal>BOOK YOUR FREE CONSULTATION CALL</a>
     <div class="video-wrap" data-reveal>
-      <script src="https://fast.wistia.com/embed/bec8eb6kex.js" async type="module"></script>
-      <style>wistia-player[media-id='bec8eb6kex']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/bec8eb6kex/swatch');display:block;filter:blur(5px);padding-top:56.25%}</style>
-      <wistia-player media-id="bec8eb6kex" aspect="1.7777777777777777"></wistia-player>
+      <script src="https://fast.wistia.com/embed/zqykcwwyzs.js" async type="module"></script>
+      <style>wistia-player[media-id='zqykcwwyzs']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/zqykcwwyzs/swatch');display:block;filter:blur(5px);padding-top:56.25%}</style>
+      <wistia-player media-id="zqykcwwyzs" aspect="1.7777777777777777"></wistia-player>
     </div>
   </div>
 </section>
@@ -266,7 +289,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 <!-- SOCIAL PROOF BAR -->
 <div class="proof-bar" data-reveal>
   <div class="proof-bar__inner">
-    <div class="proof-stat"><div class="proof-stat__num">80+</div><div class="proof-stat__label">Countries</div></div>
+    <div class="proof-stat"><div class="proof-stat__num">85+</div><div class="proof-stat__label">Countries</div></div>
     <div class="proof-stat"><div class="proof-stat__num">4.9&#9733;</div><div class="proof-stat__label">Google Rating</div></div>
     <div class="proof-stat"><div class="proof-stat__num">20+</div><div class="proof-stat__label">Expert Coaches</div></div>
   </div>
@@ -295,74 +318,87 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 </section>
 
 
+<!-- TIER SELECTOR -->
+<section class="tier-select">
+  <div class="container" data-reveal>
+    <h2>Which Programme Is <em>Right For You?</em></h2>
+    <p class="tier-select__sub">Every tier gets results. The difference is how much support you want along the way.</p>
+    <div class="tier-select__grid">
+      <div class="tier-select__item">
+        <div class="tier-select__label">Lite</div>
+        <p class="tier-select__text">Self-motivated and time-poor? You know how to stay consistent, you just need the right plan and periodic check-ins to keep you on track.</p>
+      </div>
+      <div class="tier-select__item">
+        <div class="tier-select__label">Premium</div>
+        <p class="tier-select__text">Want faster results and more accountability? You thrive with weekly feedback, direct coach access, and a team that keeps you moving forward.</p>
+      </div>
+      <div class="tier-select__item">
+        <div class="tier-select__label">Elite</div>
+        <p class="tier-select__text">Operating at the highest standard? You want direct access to a head coach, on-demand strategy calls, and nothing left to chance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="pricing" id="pricing">
   <div class="container" data-reveal>
     <h2>Experience <em>World-Class Coaching</em></h2>
-    <div class="pricing__toggle">
-      <button class="pricing__toggle-btn active" onclick="togglePricing('monthly', this)">Monthly</button>
-      <button class="pricing__toggle-btn" onclick="togglePricing('6month', this)">6 Months<span class="pricing__toggle-save">Save</span></button>
-    </div>
     <div class="pricing__grid">
 
       <div class="pricing__card">
         <div class="pricing__plan">Lite</div>
-        <div class="pricing__tier">Armstrong Program</div>
-        <div class="pricing__price price-monthly">$<span></span>247 <span>/mo</span></div>
-        <div class="pricing__price price-6month" style="display:none">$<span></span>1,482 <span>/6mo</span></div>
-        <div class="pricing__price-sub price-monthly">Billed monthly</div>
-        <div class="pricing__price-save price-6month" style="display:none">Pay upfront for 6 months</div>
+        <div class="pricing__price">$<span></span>247 <span>/mo</span></div>
+        <div class="pricing__price-sub">Billed monthly</div>
         <div class="pricing__divider"></div>
+        <p class="pricing__desc">A streamlined coaching option for clients who can stay consistent without constant oversight. Simple structure. Proven system. Solid results.</p>
         <ul class="pricing__features">
-          <li>Customised nutrition program, training program, step targets, cardio routines</li>
+          <li>Bespoke nutrition program, training program, step targets, cardio/conditioning routines</li>
           <li>Bi-weekly video check-ins with feedback and explanation of adjustments</li>
-          <li>Supplement recommendations</li>
+          <li>Supplements/ TRT/ Peptides Support &amp; Guidance</li>
           <li>1-1 Coach WhatsApp support - Monday, Wednesday, Saturday</li>
-          <li>Private Community group access</li>
+          <li>Exercise Technique/Form video analysis feedback</li>
+          <li>Private Community Group Access</li>
         </ul>
-        <a href="https://billing.physiqueacademy.com/armstrong-program-lite-us-247-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-lite-us-247-6-months-full" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-6month" style="display:none">Get Started</a>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-lite-us-247-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline">Get Started</a>
       </div>
 
       <div class="pricing__card pricing__card--featured">
         <div class="pricing__popular">Most Popular</div>
         <div class="pricing__plan">Premium</div>
-        <div class="pricing__tier">Armstrong Program</div>
-        <div class="pricing__price price-monthly">$<span></span>449 <span>/mo</span></div>
-        <div class="pricing__price price-6month" style="display:none">$<span></span>2,309 <span>/6mo</span></div>
-        <div class="pricing__price-sub price-monthly">Billed monthly</div>
-        <div class="pricing__price-save price-6month" style="display:none">Save $385 vs monthly</div>
+        <div class="pricing__price">$<span></span>449 <span>/mo</span></div>
+        <div class="pricing__price-sub">Billed monthly</div>
         <div class="pricing__divider"></div>
+        <p class="pricing__desc">Our most in-demand coaching experience designed for clients who want faster results and elevated support.</p>
         <ul class="pricing__features">
-          <li>Premium customised nutrition program, training program, step targets, cardio routines</li>
+          <li>Bespoke nutrition program, training program, step targets, cardio/conditioning routines</li>
           <li>Weekly video check-ins with feedback and explanation of adjustments</li>
-          <li>Supplement recommendations</li>
-          <li>1-1 Coach WhatsApp support Monday-Saturday afternoon</li>
-          <li>Zoom calls every 6 weeks</li>
-          <li>Form video analysis feedback</li>
+          <li>Supplements/ TRT/ Peptides Support &amp; Guidance</li>
+          <li>1-1 Coach WhatsApp support Monday-Saturday</li>
+          <li>Exercise Technique/Form video analysis feedback</li>
           <li>Private Community group access</li>
-          <li>Mental health support (therapist)</li>
+          <li>Mental health/performance support (licensed psychologist)</li>
+          <li>Zoom catch up calls every 6 weeks road mapping your future goals, expectations and progress</li>
         </ul>
-        <a href="https://billing.physiqueacademy.com/armstrong-program-premium-us-449-6-months" target="_blank" rel="noopener" class="pricing__btn btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-premium-us-449-6-months-full" target="_blank" rel="noopener" class="pricing__btn btn-6month" style="display:none">Get Started</a>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-premium-us-449-6-months" target="_blank" rel="noopener" class="pricing__btn">Get Started</a>
       </div>
 
       <div class="pricing__card">
         <div class="pricing__plan">Elite</div>
-        <div class="pricing__tier">Armstrong Program</div>
-        <div class="pricing__price price-monthly">$<span></span>668 <span>/mo</span></div>
-        <div class="pricing__price price-6month" style="display:none">$<span></span>3,720 <span>/6mo</span></div>
-        <div class="pricing__price-sub price-monthly">Billed monthly</div>
-        <div class="pricing__price-save price-6month" style="display:none">Save $288 vs monthly</div>
+        <div class="pricing__price">$<span></span>668 <span>/mo</span></div>
+        <div class="pricing__price-sub">Billed monthly</div>
         <div class="pricing__divider"></div>
+        <p class="pricing__desc">Our most advanced level of coaching for clients who operate at the highest standard. Work directly with our top head coaches.</p>
         <ul class="pricing__features">
-          <li>Elite customised nutrition program, training program, step targets, cardio routines</li>
-          <li>Weekly video check-ins with feedback and explanation of adjustments from senior coach</li>
-          <li>Supplement recommendations</li>
-          <li>1-1 Senior Coach WhatsApp support Monday-Saturday afternoon</li>
-          <li>Zoom calls (frequency optional)</li>
-          <li>Form video analysis feedback</li>
+          <li>Bespoke nutrition program, training program, step targets, cardio/conditioning routines</li>
+          <li>Weekly video check-ins with feedback and explanation of adjustments</li>
+          <li>Supplements/ TRT/ Peptides Support &amp; Guidance</li>
+          <li>1-1 Head Coach WhatsApp support Monday-Saturday</li>
+          <li>Exercise Technique/Form video analysis feedback</li>
           <li>Private Community group access</li>
-          <li>Mental performance/health support (trusted therapist)</li>
+          <li>Mental health/performance support (licensed psychologist)</li>
+          <li>On-demand Zoom calls, assess progress, adjust strategy, and plan next steps in real time</li>
         </ul>
-        <a href="https://billing.physiqueacademy.com/armstrong-program-elite-us-668-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-elite-us-668-6-months-full" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-6month" style="display:none">Get Started</a>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-elite-us-668-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline">Get Started</a>
       </div>
 
     </div>
@@ -462,7 +498,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
           <span class="phase-card__tag">Progression Beyond Fat Loss</span>
         </div>
         <h3>Build, Perform &amp; <em>Solidify</em></h3>
-        <p>This is where fat loss evolves into strength, performance, and long-term physical capability. Build muscle, increase strength, and pursue specific performance goals -physique, endurance, or sport-based, depending on the individual.</p>
+        <p>This is where fat loss evolves into strength, performance, and long-term physical capability. Build muscle, increase strength, and pursue specific performance goals, physique, endurance, or sport-based, depending on the individual.</p>
         <p>Phase 3 solidifies habits, reinforces structure, and establishes a long term standard for training and lifestyle. The outcome is not just improved performance, but the ability to sustain it independently.</p>
         <div class="phase-card__stats">
           <div><strong>&#8593;</strong> Muscle &amp; Strength</div>
@@ -484,30 +520,54 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
     <p style="font-size:15px;color:var(--gray);font-style:italic;font-weight:600;margin-top:12px">The difference between these men and the ones still stuck isn't talent or time.<br>It's the decision you just made.</p>
   </div>
   <div class="transform-grid" data-reveal>
-    <div class="transform-card" onclick="openLightbox(0)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/jason-wilson.webp" alt="Jason Wilson" loading="lazy"></div><div class="transform-card__name">Jason Wilson</div></div>
-    <div class="transform-card" onclick="openLightbox(1)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/craig-dinblebee.webp" alt="Craig Dimblebee" loading="lazy"></div><div class="transform-card__name">Craig Dimblebee</div></div>
-    <div class="transform-card" onclick="openLightbox(2)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/damien-barr.webp" alt="Damian Barr" loading="lazy"></div><div class="transform-card__name">Damian Barr</div></div>
-    <div class="transform-card" onclick="openLightbox(3)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/dave-hanrahan.webp" alt="Dave Hanrahan" loading="lazy"></div><div class="transform-card__name">Dave Hanrahan</div></div>
-    <div class="transform-card" onclick="openLightbox(4)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/tony-kopa.webp" alt="Tony Kopa" loading="lazy"></div><div class="transform-card__name">Tony Kopa</div></div>
-    <div class="transform-card" onclick="openLightbox(5)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/federico-testa.webp" alt="Federico Testa" loading="lazy"></div><div class="transform-card__name">Federico Testa</div></div>
-    <div class="transform-card" onclick="openLightbox(6)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/joe-smithey.webp" alt="Joe Smithey" loading="lazy"></div><div class="transform-card__name">Joe Smithey</div></div>
-    <div class="transform-card" onclick="openLightbox(7)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/reed-burton.webp" alt="Reed Burton" loading="lazy"></div><div class="transform-card__name">Reed Burton</div></div>
-    <div class="transform-card" onclick="openLightbox(8)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/ricardo-escobedo.webp" alt="Ricardo Escobedo" loading="lazy"></div><div class="transform-card__name">Ricardo Escobedo</div></div>
-    <div class="transform-card" onclick="openLightbox(9)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/russell-smalley.webp" alt="Russell Smalley" loading="lazy"></div><div class="transform-card__name">Russell Smalley</div></div>
-    <div class="transform-card" onclick="openLightbox(10)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/steven-manirath.webp" alt="Steven Manirath" loading="lazy"></div><div class="transform-card__name">Steven Manirath</div></div>
-    <div class="transform-card" onclick="openLightbox(11)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/alex-bond.webp" alt="Alex Bond" loading="lazy"></div><div class="transform-card__name">Alex Bond</div></div>
-    <div class="transform-card" onclick="openLightbox(12)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/joe-schafer.webp" alt="Joe Schafer" loading="lazy"></div><div class="transform-card__name">Joe Schafer</div></div>
-    <div class="transform-card" onclick="openLightbox(13)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/sean-kelly.webp" alt="Sean Kelly" loading="lazy"></div><div class="transform-card__name">Sean Kelly</div></div>
-    <div class="transform-card" onclick="openLightbox(14)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/tim-giessauf.webp" alt="Tim Giessauf" loading="lazy"></div><div class="transform-card__name">Tim Giessauf</div></div>
-    <div class="transform-card" onclick="openLightbox(15)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/luke-salmons.webp" alt="Luke Salmons" loading="lazy"></div><div class="transform-card__name">Luke Salmons</div></div>
-    <div class="transform-card" onclick="openLightbox(16)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/hans-rennings.webp" alt="Hans Rennings" loading="lazy"></div><div class="transform-card__name">Hans Rennings</div></div>
-    <div class="transform-card" onclick="openLightbox(17)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/brad-bond.webp" alt="Brad Bond" loading="lazy"></div><div class="transform-card__name">Brad Bond</div></div>
-    <div class="transform-card" onclick="openLightbox(18)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/zack-bennema.webp" alt="Zack Bennema" loading="lazy"></div><div class="transform-card__name">Zack Bennema</div></div>
-    <div class="transform-card" onclick="openLightbox(19)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/aaron-lake.webp" alt="Aaron Lake" loading="lazy"></div><div class="transform-card__name">Aaron Lake</div></div>
-    <div class="transform-card" onclick="openLightbox(20)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/jake-mcdonell.webp" alt="Jake McDonell" loading="lazy"></div><div class="transform-card__name">Jake McDonell</div></div>
-    <div class="transform-card" onclick="openLightbox(21)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/jake-carus.webp" alt="Jake Carus" loading="lazy"></div><div class="transform-card__name">Jake Carus</div></div>
-    <div class="transform-card" onclick="openLightbox(22)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/andy-taylor.webp" alt="Andy Taylor" loading="lazy"></div><div class="transform-card__name">Andy Taylor</div></div>
-    <div class="transform-card" onclick="openLightbox(23)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/alex-purcell.webp" alt="Alex Purcell" loading="lazy"></div><div class="transform-card__name">Alex Purcell</div></div>
+    <div class="transform-card" onclick="openLightbox(0)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/mike-teagle.webp" alt="Mike Teagle" loading="lazy"></div><div class="transform-card__name">Mike Teagle</div></div>
+    <div class="transform-card" onclick="openLightbox(1)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/alessandro-cusuman.webp" alt="Alessandro Cusuman" loading="lazy"></div><div class="transform-card__name">Alessandro Cusuman</div></div>
+    <div class="transform-card" onclick="openLightbox(2)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/andre-hoffman.webp" alt="Andre Hoffman" loading="lazy"></div><div class="transform-card__name">Andre Hoffman</div></div>
+    <div class="transform-card" onclick="openLightbox(3)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/chris-gordon.webp" alt="Chris Gordon" loading="lazy"></div><div class="transform-card__name">Chris Gordon</div></div>
+    <div class="transform-card" onclick="openLightbox(4)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/chris-hadley.webp" alt="Chris Hadley" loading="lazy"></div><div class="transform-card__name">Chris Hadley</div></div>
+    <div class="transform-card" onclick="openLightbox(5)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/chris-tiloltson.webp" alt="Chris Tiloltson" loading="lazy"></div><div class="transform-card__name">Chris Tiloltson</div></div>
+    <div class="transform-card" onclick="openLightbox(6)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/daniel-mcdonald.webp" alt="Daniel McDonald" loading="lazy"></div><div class="transform-card__name">Daniel McDonald</div></div>
+    <div class="transform-card" onclick="openLightbox(7)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/darvin-legaspi.webp" alt="Darvin Legaspi" loading="lazy"></div><div class="transform-card__name">Darvin Legaspi</div></div>
+    <div class="transform-card" onclick="openLightbox(8)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/john-martin.webp" alt="John Martin" loading="lazy"></div><div class="transform-card__name">John Martin</div></div>
+    <div class="transform-card" onclick="openLightbox(9)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/johnathan-mercer.webp" alt="Johnathan Mercer" loading="lazy"></div><div class="transform-card__name">Johnathan Mercer</div></div>
+    <div class="transform-card" onclick="openLightbox(10)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/joush-hutton.webp" alt="Joush Hutton" loading="lazy"></div><div class="transform-card__name">Joush Hutton</div></div>
+    <div class="transform-card" onclick="openLightbox(11)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/magnus-stohle.webp" alt="Magnus Stohle" loading="lazy"></div><div class="transform-card__name">Magnus Stohle</div></div>
+    <div class="transform-card" onclick="openLightbox(12)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/marc-kleisley.webp" alt="Marc Kleisley" loading="lazy"></div><div class="transform-card__name">Marc Kleisley</div></div>
+    <div class="transform-card" onclick="openLightbox(13)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/matt-barr.webp" alt="Matt Barr" loading="lazy"></div><div class="transform-card__name">Matt Barr</div></div>
+    <div class="transform-card" onclick="openLightbox(14)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/nigel-perera.webp" alt="Nigel Perera" loading="lazy"></div><div class="transform-card__name">Nigel Perera</div></div>
+    <div class="transform-card" onclick="openLightbox(15)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/philippe-girad.webp" alt="Philippe Girad" loading="lazy"></div><div class="transform-card__name">Philippe Girad</div></div>
+    <div class="transform-card" onclick="openLightbox(16)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/robert-mather.webp" alt="Robert Mather" loading="lazy"></div><div class="transform-card__name">Robert Mather</div></div>
+    <div class="transform-card" onclick="openLightbox(17)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/ross-atkins.webp" alt="Ross Atkins" loading="lazy"></div><div class="transform-card__name">Ross Atkins</div></div>
+    <div class="transform-card" onclick="openLightbox(18)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/sam-lightfoot.webp" alt="Sam Lightfoot" loading="lazy"></div><div class="transform-card__name">Sam Lightfoot</div></div>
+    <div class="transform-card" onclick="openLightbox(19)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/sean-anderson.webp" alt="Sean Anderson" loading="lazy"></div><div class="transform-card__name">Sean Anderson</div></div>
+    <div class="transform-card" onclick="openLightbox(20)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/tim-russell.webp" alt="Tim Russell" loading="lazy"></div><div class="transform-card__name">Tim Russell</div></div>
+    <div class="transform-card" onclick="openLightbox(21)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/tom-collins.webp" alt="Tom Collins" loading="lazy"></div><div class="transform-card__name">Tom Collins</div></div>
+    <div class="transform-card" onclick="openLightbox(22)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/tommy-cindahl.webp" alt="Tommy Cindahl" loading="lazy"></div><div class="transform-card__name">Tommy Cindahl</div></div>
+    <div class="transform-card" onclick="openLightbox(23)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/jason-wilson.webp" alt="Jason Wilson" loading="lazy"></div><div class="transform-card__name">Jason Wilson</div></div>
+    <div class="transform-card" onclick="openLightbox(24)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/craig-dinblebee.webp" alt="Craig Dimblebee" loading="lazy"></div><div class="transform-card__name">Craig Dimblebee</div></div>
+    <div class="transform-card" onclick="openLightbox(25)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/damien-barr.webp" alt="Damian Barr" loading="lazy"></div><div class="transform-card__name">Damian Barr</div></div>
+    <div class="transform-card" onclick="openLightbox(26)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/dave-hanrahan.webp" alt="Dave Hanrahan" loading="lazy"></div><div class="transform-card__name">Dave Hanrahan</div></div>
+    <div class="transform-card" onclick="openLightbox(27)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/tony-kopa.webp" alt="Tony Kopa" loading="lazy"></div><div class="transform-card__name">Tony Kopa</div></div>
+    <div class="transform-card" onclick="openLightbox(28)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/federico-testa.webp" alt="Federico Testa" loading="lazy"></div><div class="transform-card__name">Federico Testa</div></div>
+    <div class="transform-card" onclick="openLightbox(29)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/joe-smithey.webp" alt="Joe Smithey" loading="lazy"></div><div class="transform-card__name">Joe Smithey</div></div>
+    <div class="transform-card" onclick="openLightbox(30)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/reed-burton.webp" alt="Reed Burton" loading="lazy"></div><div class="transform-card__name">Reed Burton</div></div>
+    <div class="transform-card" onclick="openLightbox(31)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/ricardo-escobedo.webp" alt="Ricardo Escobedo" loading="lazy"></div><div class="transform-card__name">Ricardo Escobedo</div></div>
+    <div class="transform-card" onclick="openLightbox(32)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/russell-smalley.webp" alt="Russell Smalley" loading="lazy"></div><div class="transform-card__name">Russell Smalley</div></div>
+    <div class="transform-card" onclick="openLightbox(33)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/steven-manirath.webp" alt="Steven Manirath" loading="lazy"></div><div class="transform-card__name">Steven Manirath</div></div>
+    <div class="transform-card" onclick="openLightbox(34)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/alex-bond.webp" alt="Alex Bond" loading="lazy"></div><div class="transform-card__name">Alex Bond</div></div>
+    <div class="transform-card" onclick="openLightbox(35)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/joe-schafer.webp" alt="Joe Schafer" loading="lazy"></div><div class="transform-card__name">Joe Schafer</div></div>
+    <div class="transform-card" onclick="openLightbox(36)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/sean-kelly.webp" alt="Sean Kelly" loading="lazy"></div><div class="transform-card__name">Sean Kelly</div></div>
+    <div class="transform-card" onclick="openLightbox(37)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/tim-giessauf.webp" alt="Tim Giessauf" loading="lazy"></div><div class="transform-card__name">Tim Giessauf</div></div>
+    <div class="transform-card" onclick="openLightbox(38)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/luke-salmons.webp" alt="Luke Salmons" loading="lazy"></div><div class="transform-card__name">Luke Salmons</div></div>
+    <div class="transform-card" onclick="openLightbox(39)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/hans-rennings.webp" alt="Hans Rennings" loading="lazy"></div><div class="transform-card__name">Hans Rennings</div></div>
+    <div class="transform-card" onclick="openLightbox(40)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/brad-bond.webp" alt="Brad Bond" loading="lazy"></div><div class="transform-card__name">Brad Bond</div></div>
+    <div class="transform-card" onclick="openLightbox(41)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/zack-bennema.webp" alt="Zack Bennema" loading="lazy"></div><div class="transform-card__name">Zack Bennema</div></div>
+    <div class="transform-card" onclick="openLightbox(42)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/aaron-lake.webp" alt="Aaron Lake" loading="lazy"></div><div class="transform-card__name">Aaron Lake</div></div>
+    <div class="transform-card" onclick="openLightbox(43)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/jake-mcdonell.webp" alt="Jake McDonell" loading="lazy"></div><div class="transform-card__name">Jake McDonell</div></div>
+    <div class="transform-card" onclick="openLightbox(44)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/jake-carus.webp" alt="Jake Carus" loading="lazy"></div><div class="transform-card__name">Jake Carus</div></div>
+    <div class="transform-card" onclick="openLightbox(45)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/andy-taylor.webp" alt="Andy Taylor" loading="lazy"></div><div class="transform-card__name">Andy Taylor</div></div>
+    <div class="transform-card" onclick="openLightbox(46)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/alex-purcell.webp" alt="Alex Purcell" loading="lazy"></div><div class="transform-card__name">Alex Purcell</div></div>
+    <div class="transform-card" onclick="openLightbox(47)"><div class="transform-card__visual"><img src="https://physique-academy.s3.amazonaws.com/transformations/oliver-urban.webp" alt="Oliver Urban" loading="lazy"></div><div class="transform-card__name">Oliver Urban</div></div>
   </div>
 
   <!-- LIGHTBOX -->
@@ -526,71 +586,62 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 <section class="pricing" id="pricing2">
   <div class="container" data-reveal>
     <h2>Ready To <em>Get Started?</em></h2>
-    <div class="pricing__toggle">
-      <button class="pricing__toggle-btn active" onclick="togglePricing('monthly', this)">Monthly</button>
-      <button class="pricing__toggle-btn" onclick="togglePricing('6month', this)">6 Months<span class="pricing__toggle-save">Save</span></button>
-    </div>
     <div class="pricing__grid">
 
       <div class="pricing__card">
         <div class="pricing__plan">Lite</div>
-        <div class="pricing__tier">Armstrong Program</div>
-        <div class="pricing__price price-monthly">$<span></span>247 <span>/mo</span></div>
-        <div class="pricing__price price-6month" style="display:none">$<span></span>1,482 <span>/6mo</span></div>
-        <div class="pricing__price-sub price-monthly">Billed monthly</div>
-        <div class="pricing__price-save price-6month" style="display:none">Pay upfront for 6 months</div>
+        <div class="pricing__price">$<span></span>247 <span>/mo</span></div>
+        <div class="pricing__price-sub">Billed monthly</div>
         <div class="pricing__divider"></div>
+        <p class="pricing__desc">A streamlined coaching option for clients who can stay consistent without constant oversight. Simple structure. Proven system. Solid results.</p>
         <ul class="pricing__features">
-          <li>Customised nutrition program, training program, step targets, cardio routines</li>
+          <li>Bespoke nutrition program, training program, step targets, cardio/conditioning routines</li>
           <li>Bi-weekly video check-ins with feedback and explanation of adjustments</li>
-          <li>Supplement recommendations</li>
+          <li>Supplements/ TRT/ Peptides Support &amp; Guidance</li>
           <li>1-1 Coach WhatsApp support - Monday, Wednesday, Saturday</li>
-          <li>Private Community group access</li>
+          <li>Exercise Technique/Form video analysis feedback</li>
+          <li>Private Community Group Access</li>
         </ul>
-        <a href="https://billing.physiqueacademy.com/armstrong-program-lite-us-247-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-lite-us-247-6-months-full" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-6month" style="display:none">Get Started</a>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-lite-us-247-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline">Get Started</a>
       </div>
 
       <div class="pricing__card pricing__card--featured">
         <div class="pricing__popular">Most Popular</div>
         <div class="pricing__plan">Premium</div>
-        <div class="pricing__tier">Armstrong Program</div>
-        <div class="pricing__price price-monthly">$<span></span>449 <span>/mo</span></div>
-        <div class="pricing__price price-6month" style="display:none">$<span></span>2,309 <span>/6mo</span></div>
-        <div class="pricing__price-sub price-monthly">Billed monthly</div>
-        <div class="pricing__price-save price-6month" style="display:none">Save $385 vs monthly</div>
+        <div class="pricing__price">$<span></span>449 <span>/mo</span></div>
+        <div class="pricing__price-sub">Billed monthly</div>
         <div class="pricing__divider"></div>
+        <p class="pricing__desc">Our most in-demand coaching experience designed for clients who want faster results and elevated support.</p>
         <ul class="pricing__features">
-          <li>Premium customised nutrition program, training program, step targets, cardio routines</li>
+          <li>Bespoke nutrition program, training program, step targets, cardio/conditioning routines</li>
           <li>Weekly video check-ins with feedback and explanation of adjustments</li>
-          <li>Supplement recommendations</li>
-          <li>1-1 Coach WhatsApp support Monday-Saturday afternoon</li>
-          <li>Zoom calls every 6 weeks</li>
-          <li>Form video analysis feedback</li>
+          <li>Supplements/ TRT/ Peptides Support &amp; Guidance</li>
+          <li>1-1 Coach WhatsApp support Monday-Saturday</li>
+          <li>Exercise Technique/Form video analysis feedback</li>
           <li>Private Community group access</li>
-          <li>Mental health support (therapist)</li>
+          <li>Mental health/performance support (licensed psychologist)</li>
+          <li>Zoom catch up calls every 6 weeks road mapping your future goals, expectations and progress</li>
         </ul>
-        <a href="https://billing.physiqueacademy.com/armstrong-program-premium-us-449-6-months" target="_blank" rel="noopener" class="pricing__btn btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-premium-us-449-6-months-full" target="_blank" rel="noopener" class="pricing__btn btn-6month" style="display:none">Get Started</a>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-premium-us-449-6-months" target="_blank" rel="noopener" class="pricing__btn">Get Started</a>
       </div>
 
       <div class="pricing__card">
         <div class="pricing__plan">Elite</div>
-        <div class="pricing__tier">Armstrong Program</div>
-        <div class="pricing__price price-monthly">$<span></span>668 <span>/mo</span></div>
-        <div class="pricing__price price-6month" style="display:none">$<span></span>3,720 <span>/6mo</span></div>
-        <div class="pricing__price-sub price-monthly">Billed monthly</div>
-        <div class="pricing__price-save price-6month" style="display:none">Save $288 vs monthly</div>
+        <div class="pricing__price">$<span></span>668 <span>/mo</span></div>
+        <div class="pricing__price-sub">Billed monthly</div>
         <div class="pricing__divider"></div>
+        <p class="pricing__desc">Our most advanced level of coaching for clients who operate at the highest standard. Work directly with our top head coaches.</p>
         <ul class="pricing__features">
-          <li>Elite customised nutrition program, training program, step targets, cardio routines</li>
-          <li>Weekly video check-ins with feedback and explanation of adjustments from senior coach</li>
-          <li>Supplement recommendations</li>
-          <li>1-1 Senior Coach WhatsApp support Monday-Saturday afternoon</li>
-          <li>Zoom calls (frequency optional)</li>
-          <li>Form video analysis feedback</li>
+          <li>Bespoke nutrition program, training program, step targets, cardio/conditioning routines</li>
+          <li>Weekly video check-ins with feedback and explanation of adjustments</li>
+          <li>Supplements/ TRT/ Peptides Support &amp; Guidance</li>
+          <li>1-1 Head Coach WhatsApp support Monday-Saturday</li>
+          <li>Exercise Technique/Form video analysis feedback</li>
           <li>Private Community group access</li>
-          <li>Mental performance/health support (trusted therapist)</li>
+          <li>Mental health/performance support (licensed psychologist)</li>
+          <li>On-demand Zoom calls, assess progress, adjust strategy, and plan next steps in real time</li>
         </ul>
-        <a href="https://billing.physiqueacademy.com/armstrong-program-elite-us-668-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-monthly">Get Started</a><a href="https://billing.physiqueacademy.com/armstrong-program-elite-us-668-6-months-full" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline btn-6month" style="display:none">Get Started</a>
+        <a href="https://billing.physiqueacademy.com/armstrong-program-elite-us-668-6-months" target="_blank" rel="noopener" class="pricing__btn pricing__btn--outline">Get Started</a>
       </div>
 
     </div>
@@ -619,7 +670,31 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
   <p style="margin-top:5px">Results may vary. Individual outcomes depend on effort, adherence, and starting point.</p>
 </footer>
 
+<!-- BOOKING MODAL -->
+<div class="booking-overlay" id="bookingModal">
+  <div class="booking-modal">
+    <button class="booking-modal-close" onclick="closeBookingModal()" aria-label="Close modal"></button>
+    <div class="booking-modal-content">
+      <div style="background:#f8f9fa;color:#333;padding:1rem;text-align:center;width:100%;font-family:'Inter',sans-serif">
+        <div style="font-size:clamp(0.9rem,3vw,1.4rem);font-weight:600;line-height:1.3">
+          <strong>Book your <span style="color:#7FC838;font-weight:700">Consultation Call</span> in under <span style="color:#7FC838;font-weight:700">60 seconds</span></strong>
+        </div>
+      </div>
+      <iframe src="https://api.leadconnectorhq.com/widget/booking/zq9rJ1MN23szkjo199Wm"
+              style="width:100%;border:none;overflow:hidden;min-height:600px;"
+              scrolling="no"
+              id="ZTobsHsJbcUx6oDzNaqz_1775086662181">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
 <script>
+function openBookingModal(){document.getElementById('bookingModal').classList.add('active');document.body.style.overflow='hidden'}
+function closeBookingModal(){document.getElementById('bookingModal').classList.remove('active');document.body.style.overflow=''}
+document.getElementById('bookingModal').addEventListener('click',function(e){if(e.target===this)closeBookingModal()});
+
 function openExcuseImg(el) {
   const img = el.querySelector('img');
   document.getElementById('lb-img').src = img.src;
@@ -629,21 +704,19 @@ function openExcuseImg(el) {
   document.getElementById('lightbox').style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
-function togglePricing(type, btn) {
-  document.querySelectorAll('.pricing__toggle-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.price-monthly, .btn-monthly').forEach(el => el.style.display = type === 'monthly' ? '' : 'none');
-  document.querySelectorAll('.price-6month, .btn-6month').forEach(el => el.style.display = type === '6month' ? '' : 'none');
-}
 const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target)}})},{threshold:.06});
 document.querySelectorAll('[data-reveal]').forEach(el=>obs.observe(el));
-const imgs=[{src:'https://physique-academy.s3.amazonaws.com/transformations/jason-wilson.webp',name:'Jason Wilson'},{src:'https://physique-academy.s3.amazonaws.com/transformations/craig-dinblebee.webp',name:'Craig Dimblebee'},{src:'https://physique-academy.s3.amazonaws.com/transformations/damien-barr.webp',name:'Damian Barr'},{src:'https://physique-academy.s3.amazonaws.com/transformations/dave-hanrahan.webp',name:'Dave Hanrahan'},{src:'https://physique-academy.s3.amazonaws.com/transformations/tony-kopa.webp',name:'Tony Kopa'},{src:'https://physique-academy.s3.amazonaws.com/transformations/federico-testa.webp',name:'Federico Testa'},{src:'https://physique-academy.s3.amazonaws.com/transformations/joe-smithey.webp',name:'Joe Smithey'},{src:'https://physique-academy.s3.amazonaws.com/transformations/reed-burton.webp',name:'Reed Burton'},{src:'https://physique-academy.s3.amazonaws.com/transformations/ricardo-escobedo.webp',name:'Ricardo Escobedo'},{src:'https://physique-academy.s3.amazonaws.com/transformations/russell-smalley.webp',name:'Russell Smalley'},{src:'https://physique-academy.s3.amazonaws.com/transformations/steven-manirath.webp',name:'Steven Manirath'},{src:'https://physique-academy.s3.amazonaws.com/transformations/alex-bond.webp',name:'Alex Bond'},{src:'https://physique-academy.s3.amazonaws.com/transformations/joe-schafer.webp',name:'Joe Schafer'},{src:'https://physique-academy.s3.amazonaws.com/transformations/sean-kelly.webp',name:'Sean Kelly'},{src:'https://physique-academy.s3.amazonaws.com/transformations/tim-giessauf.webp',name:'Tim Giessauf'},{src:'https://physique-academy.s3.amazonaws.com/transformations/luke-salmons.webp',name:'Luke Salmons'},{src:'https://physique-academy.s3.amazonaws.com/transformations/hans-rennings.webp',name:'Hans Rennings'},{src:'https://physique-academy.s3.amazonaws.com/transformations/brad-bond.webp',name:'Brad Bond'},{src:'https://physique-academy.s3.amazonaws.com/transformations/zack-bennema.webp',name:'Zack Bennema'},{src:'https://physique-academy.s3.amazonaws.com/transformations/aaron-lake.webp',name:'Aaron Lake'},{src:'https://physique-academy.s3.amazonaws.com/transformations/jake-mcdonell.webp',name:'Jake McDonell'},{src:'https://physique-academy.s3.amazonaws.com/transformations/jake-carus.webp',name:'Jake Carus'},{src:'https://physique-academy.s3.amazonaws.com/transformations/andy-taylor.webp',name:'Andy Taylor'},{src:'https://physique-academy.s3.amazonaws.com/transformations/alex-purcell.webp',name:'Alex Purcell'}];
+const imgs=[{src:'https://physique-academy.s3.amazonaws.com/transformations/mike-teagle.webp',name:'Mike Teagle'},{src:'https://physique-academy.s3.amazonaws.com/transformations/alessandro-cusuman.webp',name:'Alessandro Cusuman'},{src:'https://physique-academy.s3.amazonaws.com/transformations/andre-hoffman.webp',name:'Andre Hoffman'},{src:'https://physique-academy.s3.amazonaws.com/transformations/chris-gordon.webp',name:'Chris Gordon'},{src:'https://physique-academy.s3.amazonaws.com/transformations/chris-hadley.webp',name:'Chris Hadley'},{src:'https://physique-academy.s3.amazonaws.com/transformations/chris-tiloltson.webp',name:'Chris Tiloltson'},{src:'https://physique-academy.s3.amazonaws.com/transformations/daniel-mcdonald.webp',name:'Daniel McDonald'},{src:'https://physique-academy.s3.amazonaws.com/transformations/darvin-legaspi.webp',name:'Darvin Legaspi'},{src:'https://physique-academy.s3.amazonaws.com/transformations/john-martin.webp',name:'John Martin'},{src:'https://physique-academy.s3.amazonaws.com/transformations/johnathan-mercer.webp',name:'Johnathan Mercer'},{src:'https://physique-academy.s3.amazonaws.com/transformations/joush-hutton.webp',name:'Joush Hutton'},{src:'https://physique-academy.s3.amazonaws.com/transformations/magnus-stohle.webp',name:'Magnus Stohle'},{src:'https://physique-academy.s3.amazonaws.com/transformations/marc-kleisley.webp',name:'Marc Kleisley'},{src:'https://physique-academy.s3.amazonaws.com/transformations/matt-barr.webp',name:'Matt Barr'},{src:'https://physique-academy.s3.amazonaws.com/transformations/nigel-perera.webp',name:'Nigel Perera'},{src:'https://physique-academy.s3.amazonaws.com/transformations/philippe-girad.webp',name:'Philippe Girad'},{src:'https://physique-academy.s3.amazonaws.com/transformations/robert-mather.webp',name:'Robert Mather'},{src:'https://physique-academy.s3.amazonaws.com/transformations/ross-atkins.webp',name:'Ross Atkins'},{src:'https://physique-academy.s3.amazonaws.com/transformations/sam-lightfoot.webp',name:'Sam Lightfoot'},{src:'https://physique-academy.s3.amazonaws.com/transformations/sean-anderson.webp',name:'Sean Anderson'},{src:'https://physique-academy.s3.amazonaws.com/transformations/tim-russell.webp',name:'Tim Russell'},{src:'https://physique-academy.s3.amazonaws.com/transformations/tom-collins.webp',name:'Tom Collins'},{src:'https://physique-academy.s3.amazonaws.com/transformations/tommy-cindahl.webp',name:'Tommy Cindahl'},{src:'https://physique-academy.s3.amazonaws.com/transformations/jason-wilson.webp',name:'Jason Wilson'},{src:'https://physique-academy.s3.amazonaws.com/transformations/craig-dinblebee.webp',name:'Craig Dimblebee'},{src:'https://physique-academy.s3.amazonaws.com/transformations/damien-barr.webp',name:'Damian Barr'},{src:'https://physique-academy.s3.amazonaws.com/transformations/dave-hanrahan.webp',name:'Dave Hanrahan'},{src:'https://physique-academy.s3.amazonaws.com/transformations/tony-kopa.webp',name:'Tony Kopa'},{src:'https://physique-academy.s3.amazonaws.com/transformations/federico-testa.webp',name:'Federico Testa'},{src:'https://physique-academy.s3.amazonaws.com/transformations/joe-smithey.webp',name:'Joe Smithey'},{src:'https://physique-academy.s3.amazonaws.com/transformations/reed-burton.webp',name:'Reed Burton'},{src:'https://physique-academy.s3.amazonaws.com/transformations/ricardo-escobedo.webp',name:'Ricardo Escobedo'},{src:'https://physique-academy.s3.amazonaws.com/transformations/russell-smalley.webp',name:'Russell Smalley'},{src:'https://physique-academy.s3.amazonaws.com/transformations/steven-manirath.webp',name:'Steven Manirath'},{src:'https://physique-academy.s3.amazonaws.com/transformations/alex-bond.webp',name:'Alex Bond'},{src:'https://physique-academy.s3.amazonaws.com/transformations/joe-schafer.webp',name:'Joe Schafer'},{src:'https://physique-academy.s3.amazonaws.com/transformations/sean-kelly.webp',name:'Sean Kelly'},{src:'https://physique-academy.s3.amazonaws.com/transformations/tim-giessauf.webp',name:'Tim Giessauf'},{src:'https://physique-academy.s3.amazonaws.com/transformations/luke-salmons.webp',name:'Luke Salmons'},{src:'https://physique-academy.s3.amazonaws.com/transformations/hans-rennings.webp',name:'Hans Rennings'},{src:'https://physique-academy.s3.amazonaws.com/transformations/brad-bond.webp',name:'Brad Bond'},{src:'https://physique-academy.s3.amazonaws.com/transformations/zack-bennema.webp',name:'Zack Bennema'},{src:'https://physique-academy.s3.amazonaws.com/transformations/aaron-lake.webp',name:'Aaron Lake'},{src:'https://physique-academy.s3.amazonaws.com/transformations/jake-mcdonell.webp',name:'Jake McDonell'},{src:'https://physique-academy.s3.amazonaws.com/transformations/jake-carus.webp',name:'Jake Carus'},{src:'https://physique-academy.s3.amazonaws.com/transformations/andy-taylor.webp',name:'Andy Taylor'},{src:'https://physique-academy.s3.amazonaws.com/transformations/alex-purcell.webp',name:'Alex Purcell'},{src:'https://physique-academy.s3.amazonaws.com/transformations/oliver-urban.webp',name:'Oliver Urban'}];
 let ci=0;function show(i){ci=(i+imgs.length)%imgs.length;document.getElementById('lb-img').src=imgs[ci].src;document.getElementById('lb-img').alt=imgs[ci].name;document.getElementById('lb-name').textContent=imgs[ci].name;document.getElementById('lb-counter').textContent=(ci+1)+' / '+imgs.length}
 function openLightbox(i){document.getElementById('lightbox').style.display='flex';document.body.style.overflow='hidden';show(i)}
 function closeLightbox(){document.getElementById('lightbox').style.display='none';document.body.style.overflow=''}
 document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox()});
 function nextImage(){show(ci+1)}function prevImage(){show(ci-1)}
-document.addEventListener('keydown',e=>{if(document.getElementById('lightbox').style.display!=='flex')return;if(e.key==='Escape')closeLightbox();if(e.key==='ArrowRight')nextImage();if(e.key==='ArrowLeft')prevImage()});
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('bookingModal').classList.contains('active')){if(e.key==='Escape')closeBookingModal();return}
+  if(document.getElementById('lightbox').style.display!=='flex')return;
+  if(e.key==='Escape')closeLightbox();if(e.key==='ArrowRight')nextImage();if(e.key==='ArrowLeft')prevImage()
+});
 </script>
 </body>
 </html>
